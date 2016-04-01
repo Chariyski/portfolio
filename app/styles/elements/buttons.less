@@ -1,0 +1,80 @@
+@button-transition: background @speed @easing, transform @speed @easing;
+
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.7rem;
+  color: @link;
+  background: transparent;
+  border: none;
+  border-radius: @border-radius;
+  font-size: 1rem;
+  line-height: @base-space;
+  white-space: nowrap;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  user-select: none;
+  overflow: hidden;
+  perspective: 1px;
+  transition: @button-transition;
+
+  &:hover {
+    color: @link-hover;
+    transition: @button-transition;
+
+    .button__icon,
+    span {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &:active {
+    outline: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &--primary {
+    color: white;
+    background: @color-primary;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &--white {
+    color: white;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &--large {
+    padding: 1rem;
+  }
+
+  &--small {
+    padding: 0.5rem;
+  }
+
+  &__icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    transform: translate3d(40px, 40px, 0);
+    transition: @button-transition;
+
+  }
+
+  span {
+    display: inline-block;
+    transform: translate3d(0.5em, 0, 0);
+    transition: @button-transition;
+
+  }
+}

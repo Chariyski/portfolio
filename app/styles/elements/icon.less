@@ -1,0 +1,31 @@
+.icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4em;
+  height: 4em;
+  background: @color-primary;
+  color: white;
+  border-radius: 50%;
+
+  svg {
+    width: 1.5em;
+    height: 1.5em;
+    fill: white;
+  }
+}
+
+.icon-box {
+  text-align: center;
+  margin-right: @base-space / 2;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &__description {
+    font-weight: normal;
+    font-size: 1em;
+    line-height: @base-line-height;
+  }
+}

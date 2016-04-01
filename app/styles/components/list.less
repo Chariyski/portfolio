@@ -1,0 +1,37 @@
+.list {
+  &:extend(.block all);
+
+  list-style: none;
+  line-height: 1;
+
+  &-item {
+    &:extend(.block all);
+
+    display: flex;
+    padding-bottom: @base-space;
+    border-bottom: 1px solid @grey-light;
+
+    &__icon {
+      width: 2em;
+      height: 2em;
+      margin-right: @base-space;
+      fill: @grey;
+    }
+
+    &__content {
+      flex: 1 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__heading {
+      line-height: @base-line-height;
+      font-weight: bold;
+    }
+
+    &__description {
+      font-size: 0.75em;
+    }
+  }
+}

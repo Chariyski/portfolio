@@ -1,0 +1,115 @@
+// Core
+
+@base-font-size: 16px;
+
+@base-line-height: @base-font-size * 1.5;
+// 24px
+
+@base-space: @base-font-size * 1.5;
+// 24px
+@half-space: @base-space / 2;
+@double-space: @base-space * 2;
+
+// Colors
+
+@grey-darker: #282828;
+@grey-dark: #909090;
+@grey: #b7b7b7;
+@grey-light: #ececec;
+@grey-lighter: #f1f1f1;
+
+@blue: #42afe3;
+@green: #97cd76;
+@orange: #f68b39;
+@purple: #847bb9;
+@red: #ed6c63;
+@turquoise: #1fc8db;
+@yellow: #fce473;
+
+@color-primary: @turquoise;
+@color-secondary: @orange;
+
+// Semantic Colors
+
+@info: @blue;
+@info-invert: spin(@info, 180);
+@success: @green;
+@success-invert: spin(@success, 180);
+@warning: @yellow;
+@warning-invert: spin(@warning, 180);
+@danger: @red;
+@danger-invert: spin(@danger, 180);
+
+@background: @grey-lighter;
+
+@color-border: @grey-light;
+@color-border-hover: @grey;
+
+// Text
+
+@text: @grey-dark;
+@text-invert: findColorInvert(@text);
+@text-light: @grey;
+@text-strong: @grey-darker;
+
+// Typography
+
+@font-family-primary: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+@font-family-secondary: "Roboto Condensed", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+@font-family-monospace: "Source Code Pro", "Monaco", "Inconsolata", monospace;
+
+@size-1: 3rem;
+@size-2: 2.5rem;
+@size-3: 1.75rem;
+@size-4: 1.5rem;
+@size-5: 1.125rem;
+@size-6: 0.875rem;
+
+@size-7: 0.6875rem;
+
+@weight-title-normal: 300;
+@weight-title-bold: 500;
+
+@size-small: @size-7;
+@size-medium: @size-5;
+@size-large: @size-3;
+@size-huge: @size-1;
+
+// Breakpoints
+
+@tablet: 48em;
+@desktop: 62em;
+@widescreen: 74em;
+
+// Dimensions
+
+@column-gap: @base-space;
+@margin-bottom: @base-space;
+@section-padding: 10%;
+
+// Miscellaneous
+
+@easing: cubic-bezier(0.75, 0, 0.125, 1);
+@speed: 200ms;
+@border-radius: 40px;
+
+// Code
+
+@code: @red;
+@code-background: @background;
+
+@pre: @text;
+@pre-background: @background;
+
+// Links
+
+@link: @color-primary;
+@link-visited: @purple;
+
+@link-hover: @grey-darker;
+@link-hover-background: @grey-lighter;
+@link-hover-border: @grey-darker;
+
+@link-active: @grey-darker;
+@link-active-border: @grey-darker;
+

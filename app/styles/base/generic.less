@@ -1,0 +1,176 @@
+// TODO refactor entire file
+
+html {
+  font-size: @base-font-size;
+  min-width: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: @font-family-primary;
+}
+
+code,
+pre {
+  font-family: monospace;
+  line-height: 1.25;
+}
+
+body {
+  color: @text;
+  font-size: 1rem;
+  line-height: @base-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #222324; // TODO ?
+  font-weight: lighter; // TODO do i need the rest font weights or only lighter can be downloaded
+  font-family: @font-family-secondary;
+  line-height: @base-line-height * 2;
+}
+
+h1 {
+  font-size: 3.25em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+h5 {
+  font-size: 1.125em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+p:not(:last-child) {
+  margin-bottom: @base-space / 2;
+}
+
+a {
+  color: @link;
+  cursor: pointer;
+  text-decoration: none;
+  transition: none @speed @easing;
+  &:hover {
+    color: @link-hover;
+  }
+}
+
+ol {
+  list-style: decimal outside;
+  //margin: 1em 2em;
+}
+
+ul {
+  list-style: disc outside;
+  //margin: 1em 2em;
+
+  ul {
+    list-style-type: circle;
+    //margin-top: 0.5em;
+
+    ul {
+      list-style-type: square;
+    }
+  }
+}
+
+li + li {
+  //margin-top: 0.25em;
+}
+
+blockquote {
+  background: #f5f7fa;
+  border-left: 5px solid #d3d6db;
+  padding: 1.5em;
+
+  &:not(:last-child) {
+    //margin-bottom: 1em;
+  }
+}
+
+code {
+  background: @code-background;
+  color: @code;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 1px 2px 2px;
+}
+
+hr {
+  border-top-color: @color-border;
+  margin: 20px 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  vertical-align: baseline;
+}
+
+small {
+  font-size: @size-small;
+}
+
+strong {
+  font-family: @font-family-primary;
+}
+
+pre {
+  background: @pre-background;
+  color: @pre;
+  white-space: pre;
+  word-wrap: normal;
+  code {
+    background: @pre-background;
+    color: @pre;
+    display: block;
+    overflow-x: auto;
+    padding: 16px 20px;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: @text-strong;
+}
+
+.block:not(:last-child) {
+  margin-bottom: @margin-bottom;
+}

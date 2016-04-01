@@ -1,0 +1,30 @@
+.columns {
+  display: flex;
+  margin-left: -@base-space;
+  margin-right: -@base-space;
+
+  &--centered {
+    justify-content: center;
+  }
+
+  &--gapless {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  &--multiline {
+    flex-wrap: wrap;
+  }
+
+  &.is-vcentered {
+    align-items: center;
+  }
+}
+
+.column {
+  flex: 1;
+  min-width: 300px; // TODO find better place
+  padding: 0 @base-space;
+
+  .generate-columns(12);
+}
