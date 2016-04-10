@@ -41,6 +41,16 @@
       line-height: @base-line-height;
     }
 
+    // Overwrites the margin from .block extending
+    h1&__name,
+    h2&__name,
+    h3&__name,
+    h4&__name,
+    h5&__name,
+    h6&__name {
+      margin: 0;
+    }
+
     &__description {
       font-size: 0.875em;
 
