@@ -36,6 +36,8 @@ h3,
 h4,
 h5,
 h6 {
+  &:extend(.block all);
+
   color: #222324; // TODO ?
   font-weight: lighter; // TODO do i need the rest font weights or only lighter can be downloaded
   font-family: @font-family-secondary;
@@ -43,27 +45,27 @@ h6 {
 }
 
 h1 {
-  font-size: 3.25em;
+  font-size: @size-1;
 }
 
 h2 {
-  font-size: 1.75em;
+  font-size: @size-2;
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: @size-3;
 }
 
 h4 {
-  font-size: 1.25em;
+  font-size: @size-4;
 }
 
 h5 {
-  font-size: 1.125em;
+  font-size: @size-5;
 }
 
 h6 {
-  font-size: 1em;
+  font-size: @size-6;
 }
 
 p:not(:last-child) {
@@ -80,18 +82,20 @@ a {
   }
 }
 
+ol,
+ul {
+  &:extend(.block all);
+}
+
 ol {
   list-style: decimal outside;
-  //margin: 1em 2em;
 }
 
 ul {
   list-style: disc outside;
-  //margin: 1em 2em;
 
   ul {
     list-style-type: circle;
-    //margin-top: 0.5em;
 
     ul {
       list-style-type: square;
@@ -99,18 +103,16 @@ ul {
   }
 }
 
-li + li {
-  //margin-top: 0.25em;
+li:not(:last-of-type) {
+  margin-bottom: @margin-bottom;
 }
 
 blockquote {
+  &:extend(.block all);
+
   background: #f5f7fa;
   border-left: 5px solid #d3d6db;
   padding: 1.5em;
-
-  &:not(:last-child) {
-    //margin-bottom: 1em;
-  }
 }
 
 code {
@@ -128,6 +130,13 @@ hr {
 
 img {
   max-width: 100%;
+}
+
+svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
 }
 
 input[type="checkbox"],
