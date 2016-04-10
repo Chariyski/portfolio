@@ -1,0 +1,21 @@
+.heading {
+  &:extend(.block all);
+
+  color: currentColor;
+
+  &--large {
+    font-size: @size-large;
+  }
+
+  &&--marginless {
+    margin: 0;
+  }
+}
+
+.subheading {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 1;
+  color: @color-secondary;
+}
