@@ -1,0 +1,31 @@
+.footer {
+  background-image: url("/images/footer/background.jpg");
+  background-size: cover;
+  padding: @base-space * 2 @section-padding;
+  min-height: 100vh;
+}
+
+.contacts {
+  background: #31485e; // TODO add variable or change color
+  display: inline-block;
+  color: white;
+  padding: @base-space * 2 @base-space;
+  max-width: 380px;
+
+  ul {
+    list-style: none;
+    margin: @base-space * 2 0;
+
+    li {
+      svg {
+        fill: @color-primary;
+        margin-right: @base-space / 2;
+      }
+    }
+
+    li:not(:last-of-type) {
+      margin-bottom: @margin-bottom;
+    }
+  }
+
+}

@@ -11,8 +11,40 @@
   svg {
     width: 1.5em;
     height: 1.5em;
-    fill: white;
+    fill: currentColor;
   }
+
+  &--small {
+    font-size: @size-small;
+  }
+
+  &--linkedin {
+    background-color: #4997cf;
+
+    &:hover {
+      background: white;
+      color: #4997cf;
+    }
+  }
+
+  &--github {
+    background-color: black;
+
+    &:hover {
+      background: white;
+      color: black;
+    }
+  }
+
+  &--facebook {
+    background-color: #4e69a2;
+
+    &:hover {
+      background: white;
+      color: #4e69a2;
+    }
+  }
+
 }
 
 .icon-box {
