@@ -2,14 +2,14 @@
 @timeline-event-circle-offset: @timeline-event-circle-diameter / 2 + 1px;
 
 .timeline {
-  &:extend(.block all);
+  &:extend(.element all);
 
   list-style: none;
   font-size: 0.875rem;
   border-left: 2px solid @grey-light;
 
   &-event {
-    &:extend(.block all);
+    &:extend(.element all);
 
     display: flex;
     flex-direction: column;
@@ -35,20 +35,12 @@
     }
 
     &__name {
+      &:extend(.element-marginless all);
+
       color: @grey-darker;
       font-weight: bold;
       font-size: 1em;
       line-height: @base-line-height;
-    }
-
-    // Overwrites the margin from .block extending
-    h1&__name,
-    h2&__name,
-    h3&__name,
-    h4&__name,
-    h5&__name,
-    h6&__name {
-      margin: 0;
     }
 
     &__description {

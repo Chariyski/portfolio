@@ -36,7 +36,7 @@ h3,
 h4,
 h5,
 h6 {
-  &:extend(.block all);
+  &:extend(.element all);
 
   color: #222324; // TODO ?
   font-weight: lighter; // TODO do i need the rest font weights or only lighter can be downloaded
@@ -84,7 +84,7 @@ a {
 
 ol,
 ul {
-  &:extend(.block all);
+  &:extend(.element all);
 }
 
 ol {
@@ -108,7 +108,7 @@ li:not(:last-of-type) {
 }
 
 blockquote {
-  &:extend(.block all);
+  &:extend(.element all);
 
   background: #f5f7fa;
   border-left: 5px solid #d3d6db;
@@ -178,8 +178,4 @@ td {
 
 th {
   color: @text-strong;
-}
-
-.block:not(:last-child) {
-  margin-bottom: @margin-bottom;
 }

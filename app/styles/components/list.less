@@ -1,11 +1,11 @@
 .list {
-  &:extend(.block all);
+  &:extend(.element all);
 
   list-style: none;
   line-height: 1;
 
   &-item {
-    &:extend(.block all);
+    &:extend(.element all);
 
     display: flex;
     padding-bottom: @base-space;
@@ -26,6 +26,8 @@
     }
 
     &__heading {
+      &:extend(.element-marginless all);
+
       line-height: @base-line-height;
       font-weight: bold;
     }
