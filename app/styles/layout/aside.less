@@ -1,0 +1,21 @@
+@aside-width: 300px;
+
+.aside {
+  background: white;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: @aside-width;
+  overflow: hidden;
+  box-shadow: -2px 2px 60px 0 @color-shadow;
+
+  will-change: transform;
+  transform: translate(@aside-width, 0);
+  transition: transform @speed @easing;
+
+  &--open {
+    transform: translate(0, 0);
+  }
+}

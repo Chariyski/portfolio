@@ -7,6 +7,13 @@
   background: @color-primary;
   color: white;
   border-radius: 50%;
+  box-shadow: 0 0 30px 0 @color-shadow;
+  transition: background @speed @easing, color @speed @easing;
+
+  &:hover {
+    background: white;
+    color: @color-primary
+  }
 
   svg {
     width: 1.5em;
@@ -18,11 +25,20 @@
     font-size: @size-small;
   }
 
+  &--clickable {
+    cursor: pointer;
+  }
+
+  &--floating-top-right {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+  }
+
   &--linkedin {
     background-color: #4997cf;
 
     &:hover {
-      background: white;
       color: #4997cf;
     }
   }
@@ -31,7 +47,6 @@
     background-color: black;
 
     &:hover {
-      background: white;
       color: black;
     }
   }
@@ -40,7 +55,6 @@
     background-color: #4e69a2;
 
     &:hover {
-      background: white;
       color: #4e69a2;
     }
   }
