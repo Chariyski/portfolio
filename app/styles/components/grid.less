@@ -25,11 +25,41 @@
   flex: 1;
   padding: 0 @base-space;
 
-  .generate-columns(12);
-
   &--has-min-width {
     min-width: 250px;
   }
+
+  &--half {
+    flex: none;
+    width: 50%
+  }
+
+  &--one-third {
+    flex: none;
+    width: 33.3333%;
+  }
+
+  &--two-thirds {
+    flex: none;
+    width: 66.6666%;
+  }
+
+  &.is-one-quarter {
+    flex: none;
+    width: 25%;
+  }
+
+  &--two-quarters {
+    flex: none;
+    width: 50%;
+  }
+
+  &--three-quarters {
+    flex: none;
+    width: 75%;
+  }
+
+  .generate-columns(12);
 }
 
 @media (max-width: @tablet) {

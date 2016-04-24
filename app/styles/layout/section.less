@@ -1,5 +1,5 @@
 .section {
-  padding: 0 @section-padding;
+  padding: @base-space * 2 @section-padding;
 
   &__heading {
     color: @grey;
@@ -7,6 +7,17 @@
     font-size: 0.8em;
     font-weight: bold;
     text-transform: uppercase;
-    line-height: @base-space * 5;
+    &:first-of-type {
+      margin-bottom: @base-space * 2;
+    }
+  }
+
+  &&--primary-colored {
+    background: @color-primary;
+    color: white;
+  }
+
+  &&--primary-colored &__heading {
+    color: white;
   }
 }

@@ -1,0 +1,46 @@
+@testimonial-arrow-size: 1em;
+@testimonial-avatar-size: 3.75em;
+
+.testimonial {
+  &:extend(.element all);
+
+  color: white;
+  border: none;
+  background: transparent;
+
+  &_content {
+    background: @color-secondary;
+    margin-bottom: @base-space;
+    padding: 1em;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -@testimonial-arrow-size;
+      left: @testimonial-avatar-size / 2;
+
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: @testimonial-arrow-size @testimonial-arrow-size 0 0;
+      border-color: @color-secondary transparent transparent transparent;
+
+    }
+  }
+
+  &_footer {
+    display: flex;
+    align-items: center;
+
+    a {
+      color: currentColor
+    }
+  }
+
+  &_avatar {
+    border-radius: 50%;
+    margin-right: @base-space / 2;
+  }
+}

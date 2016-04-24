@@ -1,5 +1,5 @@
 .generate-columns(@n, @i: 1) when (@i =< @n) {
-  &.is-@{i} {
+  &.column--@{i} {
     flex: none;
     width: (@i * 100% / @n);
   }
