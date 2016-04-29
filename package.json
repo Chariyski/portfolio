@@ -51,5 +51,9 @@
     "presets": [
       "es2015"
     ]
+  },
+  "dependencies": {
+    "gumshoe": "github:cferdinandi/gumshoe",
+    "smooth-scroll": "github:cferdinandi/smooth-scroll"
   }
 }
