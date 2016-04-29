@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles/main.css"/>
   </head>
   <body>
-    <header class="header">
+    <header id="header" class="header">
       <img class="avatar" src="https://placehold.it/100x100" alt="Krasimir Chariyski"/>
 
       <h1 class="heading">
@@ -425,9 +425,19 @@
           </svg>
         </div>
       </div>
+
+      <nav class="navigation-bar navigation-bar--vertical">
+        <ul class="navigation">
+          <li class="navigation__item navigation__item--active"><a href="#header">Start</a></li>
+          <li class="navigation__item"><a href="#resume">Resume</a></li>
+          <li class="navigation__item"><a href="#testimonials">Testimonials</a></li>
+          <li class="navigation__item"><a href="#footer">Contact</a></li>
+        </ul>
+      </nav>
+
     </aside>
 
-    <footer class="footer">
+    <footer id="footer" class="footer">
       <div class="contacts">
 
         <h2 class="heading heading--large">Don’t hesitate to <strong>contact me</strong>!</h2>
