@@ -1,8 +1,8 @@
 import navigation from './modules/navigation';
 
-const asideOpenButton = document.getElementById('open-aside'),
-  asideCloseButton = document.getElementById('close-aside');
+const sidebarOpenButton = document.getElementById('open-sidebar'),
+  sidebarCloseButton = document.getElementById('close-sidebar');
 
-asideOpenButton.addEventListener('click', navigation.toggle, false);
-asideCloseButton.addEventListener('click', navigation.toggle, false);
+sidebarOpenButton.addEventListener('click', navigation.toggle, false);
+sidebarCloseButton.addEventListener('click', navigation.toggle, false);
 

@@ -1,8 +1,8 @@
 const navigation = {
   toggle() {
-    const asideSection = document.getElementById('aside');
+    const sidebarSection = document.getElementById('sidebar');
 
-    asideSection.classList.toggle('aside--open');
+    sidebarSection.classList.toggle('sidebar--open');
   }
 };
 
