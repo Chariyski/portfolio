@@ -15,5 +15,5 @@ smoothScroll.init({
 
 gumshoe.init({
   activeClass: 'navigation__item--active',
-  offset: 20
+  offset: 50
 });
