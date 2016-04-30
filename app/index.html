@@ -10,32 +10,33 @@
     <link rel="stylesheet" href="styles/main.css"/>
   </head>
   <body>
-    <header id="header" class="header">
-      <img class="avatar" src="images/avatars/Krasimir_Chariyski.jpg" alt="Krasimir Chariyski"/>
+    <main>
 
-      <h1 class="heading">
-        Hi! I’m <strong>Krasimir Chariyski</strong>
-        <span class="subheading">IT Engineer / Webdeveloper</span>
-      </h1>
+      <header id="header" class="header">
+        <img class="avatar" src="images/avatars/Krasimir_Chariyski.jpg" alt="Krasimir Chariyski"/>
 
-      <div>
-        <a class="button button--primary button--large" href="#resume">
-          <span>Go to my resume!</span>
-          <svg class="button__icon">
-            <use xlink:href="#icon-arrow-down"></use>
-          </svg>
-        </a>
+        <h1 class="heading">
+          Hi! I’m <strong>Krasimir Chariyski</strong>
+          <span class="subheading">IT Engineer / Webdeveloper</span>
+        </h1>
 
-        <a class="button button--white" href="#">
-          <span>Download my CV</span>
-          <svg class="button__icon">
-            <use xlink:href="#icon-file-pdf"></use>
-          </svg>
-        </a>
-      </div>
-    </header>
+        <div>
+          <a class="button button--primary button--large" href="#resume">
+            <span>Go to my resume!</span>
+            <svg class="button__icon">
+              <use xlink:href="#icon-arrow-down"></use>
+            </svg>
+          </a>
 
-    <main class="main">
+          <a class="button button--white" href="#">
+            <span>Download my CV</span>
+            <svg class="button__icon">
+              <use xlink:href="#icon-file-pdf"></use>
+            </svg>
+          </a>
+        </div>
+      </header>
+
       <article id="resume" class="section">
 
         <h2 class="section__heading">Resume</h2>
@@ -328,7 +329,8 @@
               member and a great person to be around.
             </div>
             <footer class="testimonial_footer">
-              <img src="images/avatars/Nikolai_Aleksandrenko.jpg" class="testimonial_avatar" alt="Nikolai Aleksandrenko"/>
+              <img src="images/avatars/Nikolai_Aleksandrenko.jpg" class="testimonial_avatar"
+                   alt="Nikolai Aleksandrenko"/>
               <cite>
                 <a href="http://www.linkedin.com/pub/krasimir-chariyski/65/654/769" target="_blank">Nikolai
                   Aleksandrenko</a>
@@ -407,15 +409,73 @@
         </div>
 
       </article>
+
+      <div id="open-sidebar" class="icon icon--clickable icon--floating-top-right">
+        <svg>
+          <use xlink:href="#icon-hamburger"></use>
+        </svg>
+      </div>
+
+      <footer id="footer" class="footer">
+        <div class="contacts">
+
+          <h2 class="heading heading--large">Don’t hesitate to <strong>contact me</strong>!</h2>
+
+          <ul>
+            <li>
+              <svg>
+                <use xlink:href="#icon-map-location"></use>
+              </svg>
+              <span>Bulgaria, Sofia</span>
+            </li>
+
+            <li>
+              <svg>
+                <use xlink:href="#icon-comments"></use>
+              </svg>
+              <span>kr.chariyski@gmail.com</span>
+            </li>
+          </ul>
+
+          <a href="#" class="button button--primary button--large">
+            Use Contact Form
+            <svg class="button__icon">
+              <use xlink:href="#icon-envelope"></use>
+            </svg>
+          </a>
+
+          <h4 class="heading heading--marginless"><strong>Check my social media!</strong></h4>
+
+          <a class="icon icon--small icon--linkedin" href="http://www.linkedin.com/pub/krasimir-chariyski/65/654/769"
+             target="_blank">
+            <svg>
+              <use xlink:href="#icon-linkedin"></use>
+            </svg>
+          </a>
+
+          <a class="icon icon--small icon--github" href="https://github.com/Chariyski" target="_blank">
+            <svg>
+              <use xlink:href="#icon-github"></use>
+            </svg>
+          </a>
+
+          <a class="icon icon--small icon--facebook" href="https://www.facebook.com/kr.chariyski" target="_blank">
+            <svg>
+              <use xlink:href="#icon-facebook"></use>
+            </svg>
+          </a>
+
+        </div>
+      </footer>
+
     </main>
 
-    <div id="open-sidebar" class="icon icon--clickable icon--floating-top-right">
-      <svg>
-        <use xlink:href="#icon-hamburger"></use>
-      </svg>
-    </div>
-
     <aside id="sidebar" class="sidebar">
+
+      <!--[if gte IE 11]><!-->
+      <h2 hidden>Sidebar content with main navigation</h2>
+      <![endif]-->
+
       <div class="columns columns--gapless columns--justify-between">
         <img class="avatar" src="images/avatars/Krasimir_Chariyski.jpg" alt="Krasimir Chariyski"/>
 
@@ -427,6 +487,10 @@
       </div>
 
       <nav class="navigation-bar navigation-bar--vertical">
+        <!--[if gte IE 11]><!-->
+        <h3 hidden>Main navigation</h3>
+        <![endif]-->
+
         <ul class="navigation" data-gumshoe>
           <li class="navigation__item"><a href="#header" data-scroll>Start</a></li>
           <li class="navigation__item"><a href="#resume" data-scroll>Resume</a></li>
@@ -436,58 +500,6 @@
       </nav>
 
     </aside>
-
-    <footer id="footer" class="footer">
-      <div class="contacts">
-
-        <h2 class="heading heading--large">Don’t hesitate to <strong>contact me</strong>!</h2>
-
-        <ul>
-          <li>
-            <svg>
-              <use xlink:href="#icon-map-location"></use>
-            </svg>
-            <span>Bulgaria, Sofia</span>
-          </li>
-
-          <li>
-            <svg>
-              <use xlink:href="#icon-comments"></use>
-            </svg>
-            <span>kr.chariyski@gmail.com</span>
-          </li>
-        </ul>
-
-        <a href="#" class="button button--primary button--large">
-          Use Contact Form
-          <svg class="button__icon">
-            <use xlink:href="#icon-envelope"></use>
-          </svg>
-        </a>
-
-        <h4 class="heading heading--marginless"><strong>Check my social media!</strong></h4>
-
-        <a class="icon icon--small icon--linkedin" href="http://www.linkedin.com/pub/krasimir-chariyski/65/654/769"
-           target="_blank">
-          <svg>
-            <use xlink:href="#icon-linkedin"></use>
-          </svg>
-        </a>
-
-        <a class="icon icon--small icon--github" href="https://github.com/Chariyski" target="_blank">
-          <svg>
-            <use xlink:href="#icon-github"></use>
-          </svg>
-        </a>
-
-        <a class="icon icon--small icon--facebook" href="https://www.facebook.com/kr.chariyski" target="_blank">
-          <svg>
-            <use xlink:href="#icon-facebook"></use>
-          </svg>
-        </a>
-
-      </div>
-    </footer>
 
     <!-- Reusable SVG icons -->
     <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="display: none;">
