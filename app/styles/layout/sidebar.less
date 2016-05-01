@@ -19,3 +19,8 @@
     transform: translate(0, 0);
   }
 }
+
+.sidebar-is-open {
+  transform: translate(-@aside-width / 2, 0);
+  transition: transform @speed @easing;
+}

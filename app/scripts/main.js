@@ -1,12 +1,12 @@
-import navigation from './modules/navigation';
+import Sidebar from './components/Sidebar';
 import smoothScroll from 'smooth-scroll';
 import gumshoe from 'gumshoe';
 
-const sidebarOpenButton = document.getElementById('open-sidebar'),
-  sidebarCloseButton = document.getElementById('close-sidebar');
-
-sidebarOpenButton.addEventListener('click', navigation.toggle, false);
-sidebarCloseButton.addEventListener('click', navigation.toggle, false);
+new Sidebar('sidebar', {
+  translate: 'page-content',
+  openButtonId: 'open-sidebar',
+  closeButtonId: 'close-sidebar'
+});
 
 smoothScroll.init({
   speed: 800,
