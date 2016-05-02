@@ -37,7 +37,7 @@ class Sidebar {
    * @returns {Sidebar}
    */
   toggle() {
-    this._sidebar.classList.toggle('sidebar--open');
+    this._sidebar.classList.toggle('sidebar--opened');
 
     if (this._transleContent) {
       this._transleContent.classList.toggle('sidebar-is-open');

@@ -8,15 +8,26 @@
   right: 0;
   bottom: 0;
   width: @aside-width;
-  overflow: hidden;
+  z-index: @zindex-sidebar;
+  overflow-x: hidden;
   box-shadow: -2px 2px 60px 0 @color-shadow;
 
   will-change: transform;
   transform: translate(@aside-width, 0);
   transition: transform @speed @easing;
 
-  &--open {
+  &--wider {
+    width: @aside-width * 1.2;
+    transform: translate(@aside-width * 1.2, 0);
+  }
+
+  &--opened {
     transform: translate(0, 0);
+  }
+
+  &--color-primary {
+    color: white;
+    background: @color-primary;
   }
 }
 

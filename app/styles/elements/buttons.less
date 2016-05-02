@@ -37,21 +37,22 @@
     outline: none;
   }
 
-  &--primary {
-    color: white;
-    background: @color-primary;
-
-    &:hover {
-      color: white;
-    }
-  }
-
+  &--primary,
+  &--secondary,
   &--white {
     color: white;
 
     &:hover {
       color: white;
     }
+  }
+
+  &--primary {
+    background: @color-primary;
+  }
+
+  &--secondary {
+    background: @color-secondary;
   }
 
   &--large {

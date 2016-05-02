@@ -1,0 +1,25 @@
+.label {
+  display: block;
+  font-size: 0.875em;
+}
+
+.input,
+.textarea {
+  &:extend(.element all);
+
+  display: block;
+  width: 100%;
+  padding: 0.75em;
+  background: white;
+  border: none;
+  border-radius: @inputs-border-radius;
+
+  &:focus {
+    outline-color: @color-secondary;
+  }
+}
+
+.textarea {
+  resize: vertical;
+  height: 6 * @base-font-size;
+}

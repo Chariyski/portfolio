@@ -21,7 +21,7 @@
         </h1>
 
         <div>
-          <a class="button button--primary button--large" href="#resume">
+          <a class="button button--primary button--large" href="#resume" data-scroll>
             <span>Go to my resume!</span>
             <svg class="button__icon">
               <use xlink:href="#icon-arrow-down"></use>
@@ -410,7 +410,6 @@
 
       </article>
 
-
       <footer id="footer" class="footer">
         <div class="contacts">
 
@@ -432,12 +431,12 @@
             </li>
           </ul>
 
-          <a href="#" class="button button--primary button--large">
-            Use Contact Form
+          <button id="toggle-contact-form" class="button button--primary button--large">
+            <span>Use Contact Form</span>
             <svg class="button__icon">
               <use xlink:href="#icon-envelope"></use>
             </svg>
-          </a>
+          </button>
 
           <h4 class="heading heading--marginless"><strong>Check my social media!</strong></h4>
 
@@ -464,12 +463,6 @@
       </footer>
 
     </main>
-
-    <div id="open-sidebar" class="icon icon--clickable icon--floating-top-right">
-      <svg>
-        <use xlink:href="#icon-hamburger"></use>
-      </svg>
-    </div>
 
     <aside id="sidebar" class="sidebar">
 
@@ -501,6 +494,54 @@
       </nav>
 
     </aside>
+
+    <aside id="contact-form-sidebar" class="sidebar sidebar--wider sidebar--color-primary">
+      <div class="columns columns--gapless columns--justify-between">
+        <img class="avatar" src="images/avatars/Krasimir_Chariyski.jpg" alt="Krasimir Chariyski"/>
+
+        <div id="close-contact-form" class="icon icon--small icon--clickable icon--inverted">
+          <svg>
+            <use xlink:href="#icon-cross"></use>
+          </svg>
+        </div>
+      </div>
+
+      <h2 class="heading heading--compact">Please fill the <strong>form</strong> - I will response as fast as I can!</h2>
+
+      <form id="contact-form">
+        <label class="label" for="name">Name *</label>
+        <input id="name" class="input" name="name">
+
+        <label class="label" for="email">Email *</label>
+        <input id="email" class="input" type="email"/>
+
+        <label class="label" for="subject">Subject *</label>
+        <input id="subject" class="input" type="text"/>
+
+        <label class="label" for="message"> Message * </label>
+        <textarea id="message" class="textarea" name="message"></textarea>
+
+        <button id="submit-contact-form" class="button button--secondary button--large">
+          <span>Submit</span>
+          <svg class="button__icon">
+            <use xlink:href="#icon-envelope"></use>
+          </svg>
+        </button>
+
+      </form>
+    </aside>
+
+    <div id="open-sidebar" class="icon icon--clickable icon--floating-top-right">
+      <svg>
+        <use xlink:href="#icon-hamburger"></use>
+      </svg>
+    </div>
+
+    <div id="open-contact-form" class="icon icon--clickable icon--inverted icon--floating-bottom-right">
+      <svg>
+        <use xlink:href="#icon-comments"></use>
+      </svg>
+    </div>
 
     <!-- Reusable SVG icons -->
     <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="display: none;">

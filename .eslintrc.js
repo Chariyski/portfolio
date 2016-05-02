@@ -11,7 +11,8 @@ module.exports = {
     'no-new': 0,
     'valid-jsdoc': [2, {
       requireReturnDescription: false
-    }]
+    }],
+    'one-var': 0
   }
 
 };

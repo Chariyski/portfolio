@@ -13,7 +13,7 @@
 
   &:hover {
     background: white;
-    color: @color-primary
+    color: @color-primary;
   }
 
   svg {
@@ -30,11 +30,30 @@
     cursor: pointer;
   }
 
-  &--floating-top-right {
+  &--inverted {
+    color: @color-primary;
+    background: white;
+
+    &:hover {
+      color: white;
+      background: @color-primary;
+    }
+  }
+
+  &--floating-top-right,
+  &--floating-bottom-right {
     position: fixed;
-    top: 1rem;
     right: 1rem;
+    z-index: @zindex-fixed-icons;
     will-change: transform;
+  }
+
+  &--floating-top-right {
+    top: 1rem;
+  }
+
+  &--floating-bottom-right {
+    bottom: 1rem;
   }
 
   &--linkedin {

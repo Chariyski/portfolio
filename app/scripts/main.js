@@ -2,6 +2,13 @@ import Sidebar from './components/Sidebar';
 import smoothScroll from 'smooth-scroll';
 import gumshoe from 'gumshoe';
 
+const toggleContactFormButton = document.getElementById('toggle-contact-form');
+
+const contactForm = new Sidebar('contact-form-sidebar', {
+  openButtonId: 'open-contact-form',
+  closeButtonId: 'close-contact-form'
+});
+
 new Sidebar('sidebar', {
   translate: 'page-content',
   openButtonId: 'open-sidebar',
@@ -17,3 +24,5 @@ gumshoe.init({
   activeClass: 'navigation__item--active',
   offset: 50
 });
+
+toggleContactFormButton.addEventListener('click', contactForm.toggle.bind(contactForm), false);
