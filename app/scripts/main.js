@@ -1,4 +1,5 @@
 import Sidebar from './components/Sidebar';
+import ContactForm from './components/Contact-form';
 import smoothScroll from 'smooth-scroll';
 import gumshoe from 'gumshoe';
 
@@ -14,6 +15,8 @@ new Sidebar('sidebar', {
   openButtonId: 'open-sidebar',
   closeButtonId: 'close-sidebar'
 });
+
+new ContactForm('contact-form');
 
 smoothScroll.init({
   speed: 800,

@@ -506,20 +506,26 @@
         </div>
       </div>
 
-      <h2 class="heading heading--compact">Please fill the <strong>form</strong> - I will response as fast as I can!</h2>
+      <h2 class="heading heading--compact">
+        Please fill the <strong>form</strong> - I will response as fast as I can!
+      </h2>
 
       <form id="contact-form">
-        <label class="label" for="name">Name *</label>
-        <input id="name" class="input" name="name">
+        <label class="label">Name *
+          <input class="input" name="name" required/>
+        </label>
 
-        <label class="label" for="email">Email *</label>
-        <input id="email" class="input" type="email"/>
+        <label class="label">Email *
+          <input class="input" type="email" name="email" required pattern="^(([a-zA-Z0-9._-])||([a-zA-Z0-9._-]+\/))+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" title="address@email.com"/>
+        </label>
 
-        <label class="label" for="subject">Subject *</label>
-        <input id="subject" class="input" type="text"/>
+        <label class="label">Subject *
+          <input class="input" type="text" name="subject" required/>
+        </label>
 
-        <label class="label" for="message"> Message * </label>
-        <textarea id="message" class="textarea" name="message"></textarea>
+        <label class="label"> Message *
+          <textarea class="textarea" name="message" required></textarea>
+        </label>
 
         <button id="submit-contact-form" class="button button--secondary button--large">
           <span>Submit</span>
