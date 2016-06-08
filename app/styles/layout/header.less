@@ -1,17 +1,21 @@
-.header {
+/* ==========================================================================
+   Header styles
+   ========================================================================== */
+
+.l-header {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   align-items: flex-start;
   justify-content: flex-end;
-  padding: 12rem @section-padding;
-  background: url("../images/header/background.jpg");
+  padding: 12rem @g-section-padding;
+  background: url('../images/header/background.jpg');
   background-size: cover;
   color: #fff;
 }
 
-@media (max-width: @tablet) {
-  .header {
+@media @g-media-query-tablet {
+  .l-header {
     min-height: auto;
   }
 }

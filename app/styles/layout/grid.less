@@ -1,7 +1,11 @@
-.columns {
+/* ==========================================================================
+   Grid system styles
+   ========================================================================== */
+
+.l-grid {
   display: flex;
-  margin-left: -@base-space;
-  margin-right: -@base-space;
+  margin-left: -@g-size-space-base;
+  margin-right: -@g-size-space-base;
 
   &--centered {
     justify-content: center;
@@ -25,9 +29,9 @@
   }
 }
 
-.column {
+.l-grid__column {
   flex: 1;
-  padding: 0 @base-space;
+  padding: 0 @g-size-space-base;
 
   &--has-min-width {
     min-width: 250px;
@@ -63,11 +67,11 @@
     width: 75%;
   }
 
-  .generate-columns(12);
+  .generate-grid-columns(12);
 }
 
-@media (max-width: @tablet) {
-  .column {
+@media @g-media-query-tablet {
+  .l-grid__column {
     width: 100%;
     flex: none;
   }

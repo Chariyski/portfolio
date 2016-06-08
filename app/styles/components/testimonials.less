@@ -1,16 +1,20 @@
+/* ==========================================================================
+   Testimonials styles
+   ========================================================================== */
+
 @testimonial-arrow-size: 1em;
 @testimonial-avatar-size: 3.75em;
 
-.testimonial {
-  &:extend(.element all);
+.c-testimonial {
+  &:extend(.u-margin-bottom-all-without-last-child all);
 
   color: white;
   border: none;
   background: transparent;
 
-  &_content {
-    background: @color-secondary;
-    margin-bottom: @base-space;
+  &__content {
+    background: @g-color-state-secondary;
+    margin-bottom: @g-size-space-base;
     padding: 1em;
     position: relative;
 
@@ -25,12 +29,12 @@
       height: 0;
       border-style: solid;
       border-width: @testimonial-arrow-size @testimonial-arrow-size 0 0;
-      border-color: @color-secondary transparent transparent transparent;
+      border-color: @g-color-state-secondary transparent transparent transparent;
 
     }
   }
 
-  &_footer {
+  &__footer {
     display: flex;
     align-items: center;
 
@@ -39,8 +43,8 @@
     }
   }
 
-  &_avatar {
+  &__avatar {
     border-radius: 50%;
-    margin-right: @base-space / 2;
+    margin-right: @g-size-space-base / 2;
   }
 }

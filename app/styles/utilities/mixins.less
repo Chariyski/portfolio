@@ -1,7 +1,11 @@
-.generate-columns(@n, @i: 1) when (@i =< @n) {
-  &.column--@{i} {
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+
+.generate-grid-columns(@n, @i: 1) when (@i =< @n) {
+  &.l-grid__column--@{i} {
     flex: none;
     width: (@i * 100% / @n);
   }
-  .generate-columns(@n, (@i + 1));
+  .generate-grid-columns(@n, (@i + 1));
 }

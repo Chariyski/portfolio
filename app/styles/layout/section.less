@@ -1,19 +1,23 @@
-.section {
-  padding: @base-space * 2 @section-padding;
+/* ==========================================================================
+   Section styles
+   ========================================================================== */
+
+.l-section {
+  padding: @g-size-space-base * 2 @g-section-padding;
 
   &__heading {
-    color: @grey;
-    font-family: @font-family-primary;
+    color: @g-color-grey;
+    font-family: @g-font-family-primary;
     font-size: 0.8em;
     font-weight: bold;
     text-transform: uppercase;
     &:first-of-type {
-      margin-bottom: @base-space * 2;
+      margin-bottom: @g-size-space-base * 2;
     }
   }
 
   &&--primary-colored {
-    background: @color-primary;
+    background: @g-color-state-primary;
     color: white;
   }
 

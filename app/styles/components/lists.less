@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Lists styles
+   ========================================================================== */
+
+.c-list {
+  &:extend(.u-margin-bottom-all-without-last-child all);
+
+  list-style: none;
+  line-height: 1;
+
+  &-item {
+    &:extend(.u-margin-bottom-all-without-last-child all);
+
+    display: flex;
+    padding-bottom: @g-size-space-base;
+    border-bottom: 1px solid @g-color-grey-light;
+
+    &__icon {
+      width: 2em;
+      height: 2em;
+      margin-right: @g-size-space-base;
+      fill: @g-color-grey;
+    }
+
+    &__content {
+      flex: 1 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__heading {
+      &:extend(.u-margin-bottom-zero all);
+
+      line-height: @g-font-line-height-base;
+      font-weight: bold;
+    }
+
+    &__description {
+      font-size: 0.75em;
+    }
+  }
+}

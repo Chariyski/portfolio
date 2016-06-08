@@ -1,19 +1,23 @@
-.icon {
+/* ==========================================================================
+   Icons styles
+   ========================================================================== */
+
+.e-icon {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: @font-size-normal;
+  font-size: @g-font-size-base;
   width: 3.5em;
   height: 3.5em;
-  background: @color-primary;
+  background: @g-color-state-primary;
   color: white;
   border-radius: 50%;
-  box-shadow: 0 0 30px 0 @color-shadow;
-  transition: background @speed @easing, color @speed @easing;
+  box-shadow: 0 0 30px 0 @g-color-state-shadow;
+  transition: background @g-transition-speed @g-transition-easing, color @g-transition-speed @g-transition-easing;
 
   &:hover {
     background: white;
-    color: @color-primary;
+    color: @g-color-state-primary;
   }
 
   svg {
@@ -31,12 +35,12 @@
   }
 
   &--inverted {
-    color: @color-primary;
+    color: @g-color-state-primary;
     background: white;
 
     &:hover {
       color: white;
-      background: @color-primary;
+      background: @g-color-state-primary;
     }
   }
 
@@ -44,7 +48,7 @@
   &--floating-bottom-right {
     position: fixed;
     right: 1rem;
-    z-index: @zindex-fixed-icons;
+    z-index: @g-zindex-fixed-icons;
     will-change: transform;
   }
 
@@ -80,19 +84,4 @@
     }
   }
 
-}
-
-.icon-box {
-  text-align: center;
-  margin-right: @base-space / 2;
-
-  &:last-of-type {
-    margin-right: 0;
-  }
-
-  &__description {
-    font-weight: normal;
-    font-size: 1em;
-    line-height: @base-line-height;
-  }
 }
