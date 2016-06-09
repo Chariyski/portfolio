@@ -1,16 +1,20 @@
-@button-transition: background @speed @easing, transform @speed @easing;
+/* ==========================================================================
+   Buttons styles
+   ========================================================================== */
 
-.button {
+@button-transition: background @g-transition-speed @g-transition-easing, transform @g-transition-speed @g-transition-easing;
+
+.e-button {
   display: inline-block;
   vertical-align: middle;
   padding: 0.7rem;
-  margin-bottom: @margin-bottom;
-  color: @link;
+  margin-bottom: @g-margin-bottom;
+  color: @g-color-link;
   background: transparent;
   border: none;
-  border-radius: @border-radius;
+  border-radius: @g-border-radius-large;
   font-size: 1rem;
-  line-height: @base-space;
+  line-height: @g-size-space-base;
   white-space: nowrap;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -20,10 +24,10 @@
   transition: @button-transition;
 
   &:hover {
-    color: @link-hover;
+    color: @g-color-link-hover;
     transition: @button-transition;
 
-    .button__icon,
+    .e-button__icon,
     span {
       transform: translate3d(0, 0, 0);
     }
@@ -48,11 +52,11 @@
   }
 
   &--primary {
-    background: @color-primary;
+    background: @g-color-state-primary;
   }
 
   &--secondary {
-    background: @color-secondary;
+    background: @g-color-state-secondary;
   }
 
   &--large {

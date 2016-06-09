@@ -1,3 +1,7 @@
+/* ==========================================================================
+   Sidebar styles
+   ========================================================================== */
+
 @aside-width: 300px;
 
 .sidebar {
@@ -8,13 +12,13 @@
   right: 0;
   bottom: 0;
   width: @aside-width;
-  z-index: @zindex-sidebar;
+  z-index: @g-zindex-sidebar;
   overflow-x: hidden;
-  box-shadow: -2px 2px 60px 0 @color-shadow;
+  box-shadow: -2px 2px 60px 0 @g-color-state-shadow;
 
   will-change: transform;
   transform: translate(@aside-width, 0);
-  transition: transform @speed @easing;
+  transition: transform @g-transition-speed @g-transition-easing;
 
   &--wider {
     width: @aside-width * 1.2;
@@ -27,11 +31,11 @@
 
   &--color-primary {
     color: white;
-    background: @color-primary;
+    background: @g-color-state-primary;
   }
 }
 
 .sidebar-is-open {
   transform: translate(-@aside-width / 2, 0);
-  transition: transform @speed @easing;
+  transition: transform @g-transition-speed @g-transition-easing;
 }

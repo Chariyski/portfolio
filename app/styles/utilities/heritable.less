@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Base classes for extending
+   ========================================================================== */
+
+.u-margin-bottom {
+  margin-bottom: @g-margin-bottom;
+}
+
+.u-margin-bottom-zero {
+  margin-bottom: 0;
+
+  &:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+
+.u-margin-bottom-all-without-last-child {
+  &:not(:last-child) {
+    margin-bottom: @g-margin-bottom;
+  }
+}

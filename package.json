@@ -23,10 +23,7 @@
     "predev": "npm run build",
     "dev": "npm-run-all --parallel serve watch"
   },
-  "license": {
-    "type": "Apache-2.0",
-    "url": "http://opensource.org/licenses/apache2.0.php"
-  },
+  "license": "Apache-2.0",
   "devDependencies": {
     "babel-cli": "^6.4.5",
     "babel-core": "^6.4.5",

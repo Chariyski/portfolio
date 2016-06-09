@@ -24,7 +24,7 @@ smoothScroll.init({
 });
 
 gumshoe.init({
-  activeClass: 'navigation__item--active',
+  activeClass: 'c-navigation__item--is-active',
   offset: 50
 });
 

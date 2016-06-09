@@ -1,20 +1,24 @@
+/* ==========================================================================
+   Timelines styles
+   ========================================================================== */
+
 @timeline-event-circle-diameter: 10px;
 @timeline-event-circle-offset: @timeline-event-circle-diameter / 2 + 1px;
 
-.timeline {
-  &:extend(.element all);
+.c-timeline {
+  &:extend(.u-margin-bottom-all-without-last-child all);
 
   list-style: none;
   font-size: 0.875rem;
-  border-left: 2px solid @grey-light;
+  border-left: 2px solid @g-color-grey-light;
 
   &-event {
-    &:extend(.element all);
+    &:extend(.u-margin-bottom-all-without-last-child all);
 
     display: flex;
     flex-direction: column;
     position: relative;
-    padding-left: @base-space * 2;
+    padding-left: @g-size-space-base * 2;
 
     &:before {
       content: '';
@@ -25,22 +29,22 @@
       width: @timeline-event-circle-diameter;
       height: @timeline-event-circle-diameter;
       border-radius: 50%;
-      background: @color-primary;
+      background: @g-color-state-primary;
     }
 
     &__date {
       font-size: 0.875em;
       font-weight: bold;
-      margin-bottom: @base-space / 2;
+      margin-bottom: @g-size-space-base / 2;
     }
 
     &__name {
-      &:extend(.element-marginless all);
+      &:extend(.u-margin-bottom-zero all);
 
-      color: @grey-darker;
+      color: @g-color-grey-darker;
       font-weight: bold;
       font-size: 1em;
-      line-height: @base-line-height;
+      line-height: @g-font-line-height-base;
     }
 
     &__description {

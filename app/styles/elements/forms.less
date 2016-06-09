@@ -1,35 +1,38 @@
-.label,
-.input,
-.textarea {
-  &:extend(.element all);
+/* ==========================================================================
+   Form elements styles
+   ========================================================================== */
+
+.e-label,
+.e-input,
+.e-textarea {
+  &:extend(.u-margin-bottom-all-without-last-child all);
 }
 
-.label {
+.e-label {
   display: block;
   font-size: 0.875em;
 }
 
-.input,
-.textarea {
+.e-input,
+.e-textarea {
   display: block;
   width: 100%;
   padding: 0.75em;
   background: white;
   border: 2px solid transparent;
-  border-radius: @inputs-border-radius;
+  border-radius: @g-border-radius-tiny;
 
   &:focus {
     outline: none;
-    border-color: @color-secondary;
+    border-color: @g-color-state-secondary;
   }
 
+  &.is-invalid {
+    border-color: @g-color-state-danger;
+  }
 }
 
-.textarea {
+.e-textarea {
   resize: vertical;
-  height: 6 * @base-font-size;
-}
-
-.is-invalid {
-  border-color: @danger;
+  height: 6 * @g-font-size-base;
 }

@@ -1,7 +1,7 @@
 // TODO refactor entire file
 
 html {
-  font-size: @base-font-size;
+  font-size: @g-font-size-base;
   min-width: 300px;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -15,7 +15,7 @@ button,
 input,
 select,
 textarea {
-  font-family: @font-family-primary;
+  font-family: @g-font-family-primary;
 }
 
 code,
@@ -25,9 +25,9 @@ pre {
 }
 
 body {
-  color: @text;
+  color: @g-color-text;
   font-size: 1rem;
-  line-height: @base-line-height;
+  line-height: @g-font-line-height-base;
 }
 
 h1,
@@ -36,12 +36,12 @@ h3,
 h4,
 h5,
 h6 {
-  &:extend(.element all);
+  &:extend(.u-margin-bottom-all-without-last-child all);
 
   color: #222324; // TODO ?
   font-weight: lighter; // TODO do i need the rest font weights or only lighter can be downloaded
-  font-family: @font-family-secondary;
-  line-height: @base-line-height * 2;
+  font-family: @g-font-family-secondary;
+  line-height: @g-font-line-height-base * 2;
 }
 
 h1 {
@@ -69,22 +69,22 @@ h6 {
 }
 
 p:not(:last-child) {
-  margin-bottom: @base-space / 2;
+  margin-bottom: @g-size-space-base / 2;
 }
 
 a {
-  color: @link;
+  color: @g-color-link;
   cursor: pointer;
   text-decoration: none;
-  transition: none @speed @easing; // todo ?
+  transition: none @g-transition-speed @g-transition-easing; // todo ?
   &:hover {
-    color: @link-hover;
+    color: @g-color-link-hover;
   }
 }
 
 ol,
 ul {
-  &:extend(.element all);
+  &:extend(.u-margin-bottom-all-without-last-child all);
 }
 
 ol {
@@ -104,7 +104,7 @@ ul {
 }
 
 blockquote {
-  &:extend(.element all);
+  &:extend(.u-margin-bottom-all-without-last-child all);
 
   background: #f5f7fa;
   border-left: 5px solid #d3d6db;
@@ -112,15 +112,15 @@ blockquote {
 }
 
 code {
-  background: @code-background;
-  color: @code;
+  background: @g-color-background-grey-lighter;
+  color: @g-color-red;
   font-size: 12px;
   font-weight: normal;
   padding: 1px 2px 2px;
 }
 
 hr {
-  border-top-color: @color-border;
+  border-top-color: @g-color-border;
   margin: 20px 0;
 }
 
@@ -141,17 +141,17 @@ input[type="radio"] {
 }
 
 small {
-  font-size: @font-size-extra-small;
+  font-size: @g-font-size-tiny;
 }
 
 pre {
-  background: @pre-background;
-  color: @pre;
+  background: @g-color-background-grey-lighter;
+  color: @g-color-text;
   white-space: pre;
   word-wrap: normal;
   code {
-    background: @pre-background;
-    color: @pre;
+    background: @g-color-background-grey-lighter;
+    color: @g-color-text;
     display: block;
     overflow-x: auto;
     padding: 16px 20px;
@@ -169,5 +169,5 @@ td {
 }
 
 th {
-  color: @text-strong;
+  color: @g-color-text-strong;
 }
