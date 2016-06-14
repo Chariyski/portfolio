@@ -4,7 +4,7 @@
 
 @aside-width: 300px;
 
-.sidebar {
+.l-sidebar {
   background: white;
   padding: 1em 2em;
   position: fixed;
@@ -17,12 +17,11 @@
   box-shadow: -2px 2px 60px 0 @g-color-state-shadow;
 
   will-change: transform;
-  transform: translate(@aside-width, 0);
+  transform: translate(100%, 0);
   transition: transform @g-transition-speed @g-transition-easing;
 
   &--wider {
     width: @aside-width * 1.2;
-    transform: translate(@aside-width * 1.2, 0);
   }
 
   &--opened {
@@ -35,7 +34,13 @@
   }
 }
 
-.sidebar-is-open {
+.l-page--sidebar-is-open {
   transform: translate(-@aside-width / 2, 0);
   transition: transform @g-transition-speed @g-transition-easing;
+}
+
+@media @g-media-query-phome {
+  .l-sidebar {
+    width: 100%;
+  }
 }

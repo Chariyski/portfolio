@@ -37,10 +37,10 @@ class Sidebar {
    * @returns {Sidebar}
    */
   toggle() {
-    this._sidebar.classList.toggle('sidebar--opened');
+    this._sidebar.classList.toggle('l-sidebar--opened');
 
     if (this._transleContent) {
-      this._transleContent.classList.toggle('sidebar-is-open');
+      this._transleContent.classList.toggle('l-page--sidebar-is-open');
     }
 
     return this;
