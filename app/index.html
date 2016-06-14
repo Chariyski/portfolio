@@ -593,9 +593,12 @@
         </label>
 
         <label class="e-label">Email *
-          <input class="e-input" type="email" name="email" required
+          <input class="e-input"
+                 type="email"
+                 name="email"
                  pattern="^(([a-zA-Z0-9._-])||([a-zA-Z0-9._-]+\/))+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
-                 title="address@email.com"/>
+                 title="address@email.com"
+                 required/>
         </label>
 
         <label class="e-label">Subject *
@@ -606,7 +609,10 @@
           <textarea class="e-textarea" name="message" required></textarea>
         </label>
 
-        <button class="e-button e-button--secondary e-button--large" id="submit-contact-form">
+        <!-- Hidden input for spam bots -->
+        <input data-contact-form="gotcha" type="text" style="display:none"/>
+
+        <button class="e-button e-button--secondary e-button--large" data-contact-form="submit">
           <span>Submit</span>
           <svg class="e-button__icon">
             <use xlink:href="#icon-envelope"></use>

@@ -8,7 +8,8 @@
     "copy:root": "copyup app/*.* build",
     "copy:html": "copyup app/**/*.html build",
     "lint": "eslint app/scripts/**/*.js",
-    "browserify": "browserify app/scripts/main.js -o build/scripts/bundle.js  -d -t [ babelify ] -p [minifyify --map build/scripts/bundle.map.json --output build/scripts/bundle.map.json]",
+    "browserify": "browserify app/scripts/main.js -o build/scripts/bundle.js  -d -t [ babelify ]",
+    "browserify:prod": "browserify app/scripts/main.js -o build/scripts/bundle.js  -d -t [ babelify ] -p [minifyify --map build/scripts/bundle.map.json --output build/scripts/bundle.map.json]",
     "prebuild": "rimraf build && mkdirp build/scripts && mkdirp build/styles",
     "build": "npm-run-all copy:root build:*",
     "build:styles": "pleeease-compile",
@@ -22,7 +23,7 @@
     "serve": "http-server -p 8080 build/",
     "predev": "npm run build",
     "dev": "npm-run-all --parallel serve watch",
-    "prod": "npm run build && node file-versioning.js",
+    "prod": "npm run build && npm run browserify:prod && node file-versioning.js",
     "cssAudit": "parker build/styles/main.css"
   },
   "license": "Apache-2.0",
