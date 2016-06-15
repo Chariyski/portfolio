@@ -23,7 +23,7 @@
     "serve": "http-server -p 8080 build/",
     "predev": "npm run build",
     "dev": "npm-run-all --parallel serve watch",
-    "prod": "npm run build && npm run browserify:prod && node file-versioning.js",
+    "prod": "npm run build && npm run browserify:prod && node build.production.config.js",
     "cssAudit": "parker build/styles/main.css"
   },
   "license": "Apache-2.0",
@@ -35,6 +35,7 @@
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
     "copyfiles": "^0.2.1",
+    "critical": "^0.7.3",
     "eslint": "^1.10.3",
     "eslint-config-chariyski": "^0.1.5",
     "http-server": "^0.9.0",
