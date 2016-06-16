@@ -58,7 +58,7 @@ const progressBarsAnimation = {
     const deltaTime = (performance.now() - timestamp) / 1000;
     const maxProgressBarValue = progressBar.getAttribute('data-animate-to');
     const currentProgressBarValue = parseInt(progressBar.getAttribute('data-progress'), 10);
-    const increasedValue = currentProgressBarValue + 1 + deltaTime + '%';
+    const increasedValue = `${currentProgressBarValue + 1 + deltaTime}%`;
 
     progressBar.setAttribute('data-progress', parseInt(increasedValue, 10));
     progressBar.style.width = increasedValue;
@@ -71,6 +71,44 @@ const progressBarsAnimation = {
   }
 };
 
+const resumeBoxesAnimation = {
+
+  /**
+   * Initialize resume boxes animation.
+   * @returns {undefined}
+   */
+  init() {
+    const resumeBoxIcons = [...document.querySelectorAll('.c-resume-box__icon')];
+
+    if (!window.IntersectionObserver) {
+      resumeBoxIcons.forEach((resumeBoxIcon) => resumeBoxIcon.classList.add('c-resume-box__icon--is-animated'));
+      return;
+    }
+
+    this._observer = new IntersectionObserver(this._intersectionObserverHandler.bind(this), {
+      threshold: [0],
+      rootMargin: '-50px 0px'
+    });
+
+    resumeBoxIcons.forEach((resumeBoxIcon) => this._observer.observe(resumeBoxIcon));
+  },
+
+  /**
+   * Intersection observer handler.
+   * @param {Array} changes - Array with changes in the intersection of a target element with an ancestor element.
+   * @private
+   * @returns {undefined}
+   */
+  _intersectionObserverHandler(changes) {
+    changes.forEach((change) => {
+      change.target.classList.add('c-resume-box__icon--is-animated');
+
+      this._observer.unobserve(change.target);
+    });
+  }
+};
+
 export default {
-  initProgressBarsAnimation: progressBarsAnimation.init.bind(progressBarsAnimation)
+  initProgressBarsAnimation: progressBarsAnimation.init.bind(progressBarsAnimation),
+  initResumeBoxesAnimation: resumeBoxesAnimation.init.bind(resumeBoxesAnimation)
 };

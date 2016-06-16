@@ -11,11 +11,19 @@
     height: 4.5em;
     width: 4.5em;
     fill: @g-color-state-tertiary;
+    transform: translateY(-100px);
+    opacity: 0;
+    will-change: transform;
 
     // Firefox fix
     svg {
       fill: @g-color-state-tertiary;
     }
+  }
+  &__icon--is-animated {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.5s linear, opacity 0.5s linear;
   }
 
   &__heading {

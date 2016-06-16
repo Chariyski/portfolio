@@ -32,3 +32,4 @@ gumshoe.init({
 toggleContactFormButton.addEventListener('click', contactForm.toggle.bind(contactForm), false);
 
 animations.initProgressBarsAnimation();
+animations.initResumeBoxesAnimation();
