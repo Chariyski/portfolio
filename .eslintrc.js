@@ -13,6 +13,8 @@ module.exports = {
       requireReturnDescription: false
     }],
     'one-var': 0
+  },
+  'globals': {
+    IntersectionObserver: true
   }
-
 };

@@ -1,5 +1,6 @@
 import Sidebar from './components/Sidebar';
 import ContactForm from './components/Contact-form';
+import animations from './components/animations';
 import smoothScroll from 'smooth-scroll';
 import gumshoe from 'gumshoe';
 
@@ -29,3 +30,5 @@ gumshoe.init({
 });
 
 toggleContactFormButton.addEventListener('click', contactForm.toggle.bind(contactForm), false);
+
+animations.initProgressBarsAnimation();
