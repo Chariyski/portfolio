@@ -42,4 +42,7 @@ if (window.IntersectionObserver === undefined) {
   };
 
   document.head.appendChild(script);
+} else {
+  animations.initProgressBarsAnimation();
+  animations.initResumeBoxesAnimation();
 }
