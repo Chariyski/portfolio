@@ -11,6 +11,11 @@
     height: 4.5em;
     width: 4.5em;
     fill: @g-color-state-tertiary;
+
+    // Firefox fix
+    svg {
+      fill: @g-color-state-tertiary;
+    }
   }
 
   &__heading {
