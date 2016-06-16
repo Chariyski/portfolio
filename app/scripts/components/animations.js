@@ -5,11 +5,7 @@ const progressBarsAnimation = {
    * @returns {undefined}
    */
   init() {
-    if (!window.IntersectionObserver) {
-      return;
-    }
-
-    const progressBars = [...document.querySelectorAll('.c-progress__bar')];
+    const progressBars = Array.prototype.slice.call(document.querySelectorAll('.c-progress__bar'));
 
     progressBars.forEach(this._prepareProgressBarsForAnimations);
 
@@ -78,12 +74,7 @@ const resumeBoxesAnimation = {
    * @returns {undefined}
    */
   init() {
-    const resumeBoxIcons = [...document.querySelectorAll('.c-resume-box__icon')];
-
-    if (!window.IntersectionObserver) {
-      resumeBoxIcons.forEach((resumeBoxIcon) => resumeBoxIcon.classList.add('c-resume-box__icon--is-animated'));
-      return;
-    }
+    const resumeBoxIcons = Array.prototype.slice.call(document.querySelectorAll('.c-resume-box__icon'));
 
     this._observer = new IntersectionObserver(this._intersectionObserverHandler.bind(this), {
       threshold: [0],
@@ -101,9 +92,12 @@ const resumeBoxesAnimation = {
    */
   _intersectionObserverHandler(changes) {
     changes.forEach((change) => {
-      change.target.classList.add('c-resume-box__icon--is-animated');
+      const progressBar = change.target;
 
-      this._observer.unobserve(change.target);
+      // ClassList and ClassName are not working in IE11 when duplicating a svg with <use>
+      progressBar.setAttribute('class', progressBar.getAttribute('class') + ' c-resume-box__icon--is-animated');
+
+      this._observer.unobserve(progressBar);
     });
   }
 };

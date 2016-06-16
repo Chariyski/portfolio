@@ -31,5 +31,15 @@ gumshoe.init({
 
 toggleContactFormButton.addEventListener('click', contactForm.toggle.bind(contactForm), false);
 
-animations.initProgressBarsAnimation();
-animations.initResumeBoxesAnimation();
+// Polyfill IntersectionObserver
+if (window.IntersectionObserver === undefined) {
+  const script = document.createElement('script');
+
+  script.src = '/vendor/intersection-observer-polyfill.min.js';
+  script.onload = function () {
+    animations.initProgressBarsAnimation();
+    animations.initResumeBoxesAnimation();
+  };
+
+  document.head.appendChild(script);
+}
