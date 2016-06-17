@@ -25,7 +25,6 @@ const progressBarsAnimation = {
    * @returns {undefined}
    */
   _prepareProgressBarsForAnimations(progressBar) {
-    progressBar.style.width = 0;
     progressBar.setAttribute('data-progress', 0);
   },
 
@@ -50,16 +49,21 @@ const progressBarsAnimation = {
    * @private
    * @returns {undefined}
    */
-  _animateProgressBar(progressBar, timestamp) {
-    const deltaTime = (performance.now() - timestamp) / 1000;
-    const maxProgressBarValue = progressBar.getAttribute('data-animate-to');
+  _animateProgressBar(progressBar) {
+    const step = 2;
+    const defaultTransitionValue = 100;
+    const maxProgressBarValue = parseInt(progressBar.getAttribute('data-animate-to'), 10);
     const currentProgressBarValue = parseInt(progressBar.getAttribute('data-progress'), 10);
-    const increasedValue = `${currentProgressBarValue + 1 + deltaTime}%`;
+    const increasedValue = currentProgressBarValue + step;
+    const nextProgressBarValue = increasedValue <= maxProgressBarValue ? increasedValue : maxProgressBarValue;
 
-    progressBar.setAttribute('data-progress', `${parseInt(increasedValue, 10)}%`);
-    progressBar.style.width = increasedValue;
+    progressBar.setAttribute('data-progress', `${nextProgressBarValue}%`);
 
-    if (parseInt(progressBar.style.width, 10) === parseInt(maxProgressBarValue, 10)) {
+    // TODO remove webkitTransform in future
+    progressBar.style.webkitTransform = `translateX(${nextProgressBarValue - defaultTransitionValue}%)`;
+    progressBar.style.transform = `translateX(${nextProgressBarValue - defaultTransitionValue}%)`;
+
+    if (increasedValue >= maxProgressBarValue) {
       cancelAnimationFrame(this._animateProgressBar);
     } else {
       requestAnimationFrame(this.bind(this, progressBar));

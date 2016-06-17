@@ -8,15 +8,16 @@
 
 .c-progress {
   &:extend(.u-margin-bottom-all-without-last-child all);
-  position: relative;
   width: 100%;
-  padding-top: @progress-bar-label-height / 2;
+  overflow: hidden;
+  padding-top: @progress-bar-label-height;
+  position: relative;
 
   &:before {
     content: '';
     display: block;
     position: absolute;
-    top: 0;
+    top: @progress-bar-label-height / 2 - @progress-bar-height / 2;
     left: 0;
     right: 0;
     height: @progress-bar-height;
@@ -25,10 +26,13 @@
 
   &__bar {
     position: absolute;
-    top: 0;
+    top: @progress-bar-label-height / 2 - @progress-bar-height / 2;
     left: 0;
+    width: 100%;
     height: @progress-bar-height;
     background: @g-color-state-primary;
+    transform: translateX(-100%);
+    will-change: transform;
 
     &:after {
       content: attr(data-progress);
