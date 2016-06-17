@@ -2,8 +2,6 @@
    Sidebar styles
    ========================================================================== */
 
-@aside-width: 300px;
-
 .l-sidebar {
   background: white;
   padding: 1em 2em;
@@ -11,7 +9,7 @@
   top: 0;
   right: 0;
   bottom: 0;
-  width: @aside-width;
+  width: @g-sidebar-width;
   z-index: @g-zindex-sidebar;
   overflow-x: hidden;
   box-shadow: -2px 2px 60px 0 @g-color-state-shadow;
@@ -21,7 +19,7 @@
   transition: transform @g-transition-speed @g-transition-easing;
 
   &--wider {
-    width: @aside-width * 1.2;
+    width: @g-sidebar-width * 1.2;
   }
 
   &--opened {
@@ -32,11 +30,6 @@
     color: white;
     background: @g-color-state-primary;
   }
-}
-
-.l-page--sidebar-is-open {
-  transform: translate(-@aside-width / 2, 0);
-  transition: transform @g-transition-speed @g-transition-easing;
 }
 
 @media @g-media-query-phome {

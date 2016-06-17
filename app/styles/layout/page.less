@@ -6,3 +6,8 @@
   will-change: transform;
   transition: transform @g-transition-speed @g-transition-easing;
 }
+
+.l-page--sidebar-is-open {
+  transform: translate(-@g-sidebar-width / 2, 0);
+  transition: transform @g-transition-speed @g-transition-easing;
+}
