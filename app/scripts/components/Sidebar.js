@@ -5,6 +5,9 @@
  * @property {string} translate - ID of a DOM node which will be moved in parallel with the Sidebar
  */
 
+const classNameOpenSidebar = 'l-sidebar--opened';
+const classNameContentWithOpenSidebar = 'l-page--sidebar-is-open';
+
 /**
  * Multi purpose sidebar.
  */
@@ -33,27 +36,54 @@ class Sidebar {
   }
 
   /**
-   * Show/Hide the Sidebar.
+   * Hide the Sidebar.
    * @returns {Sidebar}
    */
-  toggle() {
-    this._sidebar.classList.toggle('l-sidebar--opened');
-
-    if (this._transleContent) {
-      this._transleContent.classList.toggle('l-page--sidebar-is-open');
+  close() {
+    if (this._sidebar.classList.contains(classNameOpenSidebar)) {
+      this._sidebar.classList.remove(classNameOpenSidebar);
+      this._transleContent.classList.remove(classNameContentWithOpenSidebar);
     }
 
     return this;
   }
 
   /**
+   * Show/Hide the Sidebar.
+   * @returns {Sidebar}
+   */
+  toggle() {
+    this._sidebar.classList.toggle(classNameOpenSidebar);
+
+    if (this._transleContent) {
+      this._transleContent.classList.toggle(classNameContentWithOpenSidebar);
+    }
+
+    return this;
+  }
+
+  /**
+   * Attach event handlers.
+   * @private
    * @returns {undefined}
    */
   _initializeEventHandlers() {
     this._openButton.addEventListener('click', this.toggle.bind(this), false);
     this._closeButton.addEventListener('click', this.toggle.bind(this), false);
+    this._sidebar.addEventListener('click', this._clickEventHandlers.bind(this), false);
   }
 
+  /**
+   * Click handler
+   * @param {Object} event - click event object.
+   * @private
+   * @returns {undefined}
+   */
+  _clickEventHandlers(event) {
+    if (event.target.nodeName === 'A') {
+      this.close();
+    }
+  }
 }
 
 export default Sidebar;

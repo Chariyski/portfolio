@@ -56,7 +56,7 @@ const progressBarsAnimation = {
     const currentProgressBarValue = parseInt(progressBar.getAttribute('data-progress'), 10);
     const increasedValue = `${currentProgressBarValue + 1 + deltaTime}%`;
 
-    progressBar.setAttribute('data-progress', parseInt(increasedValue, 10));
+    progressBar.setAttribute('data-progress', `${parseInt(increasedValue, 10)}%`);
     progressBar.style.width = increasedValue;
 
     if (parseInt(progressBar.style.width, 10) === parseInt(maxProgressBarValue, 10)) {
@@ -95,7 +95,7 @@ const resumeBoxesAnimation = {
       const progressBar = change.target;
 
       // ClassList and ClassName are not working in IE11 when duplicating a svg with <use>
-      progressBar.setAttribute('class', progressBar.getAttribute('class') + ' c-resume-box__icon--is-animated');
+      progressBar.setAttribute('class', `${progressBar.getAttribute('class')} c-resume-box__icon--is-animated`);
 
       this._observer.unobserve(progressBar);
     });
