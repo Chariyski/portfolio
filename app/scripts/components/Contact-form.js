@@ -95,17 +95,23 @@ class ContactForm {
    * @returns {undefined}
    */
   _sendMailWithFormspree() {
+    const gotchaInput = this._contactForm.querySelector('[data-contact-form="gotcha"]');
+    const url = 'http://script.google.com/macros/s/AKfycbxkfFCpUaanCmpf87xO-o3zjLcRKipW9efPsP18rNo0j_quuqwT/exec';
     const xhttp = new XMLHttpRequest();
     const messageData = {
-      subject: this._contactForm.subject,
-      name: this._contactForm.name,
-      email: this._contactForm.email,
-      message: this._contactForm.message,
-      _gotcha: this._contactForm.querySelector('[data-contact-form="gotcha"]').value
+      subject: this._contactForm.subject.value,
+      name: this._contactForm.name.value,
+      email: this._contactForm.email.value,
+      message: this._contactForm.message.value
     };
 
-    xhttp.open('POST', 'https://formspree.io/kr.chariyski@gmail.com', true);
-    xhttp.setRequestHeader('Content-type', 'application/json');
+    // Prevent spam from bots
+    if (gotchaInput.value) {
+      return;
+    }
+
+    xhttp.open('POST', url, true);
+    xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
     xhttp.addEventListener('progress', this._formProgressHandler.bind(this), false);
     xhttp.addEventListener('load', this._formLoadHandler.bind(this, xhttp), false);
@@ -132,7 +138,7 @@ class ContactForm {
   _formLoadHandler(xhttp) {
     const response = JSON.parse(xhttp.response);
 
-    if (response.success) {
+    if (response.result === 'success') {
       this._contactFormSubmitButton.parentNode.removeChild(this._contactFormSubmitButton);
       this._contactFormMessageContainer.innerText = 'The message was send successful.';
     }
