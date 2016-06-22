@@ -113,20 +113,25 @@ class ContactForm {
     xhttp.open('POST', url, true);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-    xhttp.addEventListener('progress', this._formProgressHandler.bind(this), false);
     xhttp.addEventListener('load', this._formLoadHandler.bind(this, xhttp), false);
     xhttp.addEventListener('error', this._formErrorHandler.bind(this), false);
+
+    this._beforeSubmitHanler();
 
     xhttp.send(JSON.stringify(messageData));
   }
 
   /**
-   * Progress event handler.
+   * Change submit button visualisation before submitting the form.
    * @private
    * @returns {undefined}
    */
-  _formProgressHandler() {
+  _beforeSubmitHanler() {
     this._contactFormSubmitButton.setAttribute('disabled', true);
+    this._contactFormSubmitButton.classList.add('e-button--is-hover');
+
+    this._contactFormSubmitButton.querySelector('span').innerHTML = 'Sending';
+    this._contactFormSubmitButton.querySelector('use').setAttribute('xlink:href', '#icon-loading');
   }
 
   /**
@@ -146,14 +151,10 @@ class ContactForm {
 
   /**
    * Error event handler.
-   * @param {object} xhttp - XMLHttpRequest object.
    * @private
    * @returns {undefined}
    */
-  _formErrorHandler(xhttp) {
-    console.log(xhttp);
-
-    // TODO add offline response
+  _formErrorHandler() {
     this._contactFormMessageContainer.innerText = 'Something went wrong, please try again later.';
   }
 

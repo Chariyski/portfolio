@@ -23,6 +23,7 @@
   perspective: 1px;
   transition: @button-transition;
 
+  &&--is-hover,
   &:hover {
     color: @g-color-link-hover;
     transition: @button-transition;
@@ -41,9 +42,9 @@
     outline: none;
   }
 
-  &--primary,
-  &--secondary,
-  &--white {
+  &&--primary,
+  &&--secondary,
+  &&--white {
     color: white;
 
     &:hover {
@@ -51,19 +52,19 @@
     }
   }
 
-  &--primary {
+  &&--primary {
     background: @g-color-state-primary;
   }
 
-  &--secondary {
+  &&--secondary {
     background: @g-color-state-secondary;
   }
 
-  &--large {
+  &&--large {
     padding: 1rem;
   }
 
-  &--small {
+  &&--small {
     padding: 0.5rem;
   }
 
@@ -74,13 +75,11 @@
     fill: currentColor;
     transform: translate3d(40px, 40px, 0);
     transition: @button-transition;
-
   }
 
   span {
     display: inline-block;
     transform: translate3d(0.5em, 0, 0);
     transition: @button-transition;
-
   }
 }
