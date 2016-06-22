@@ -11,13 +11,15 @@ const contactForm = new Sidebar('contact-form-sidebar', {
   closeButtonId: 'close-contact-form'
 });
 
+/**
+ * Initializations
+ */
+
 new Sidebar('sidebar', {
   translate: 'page-content',
   openButtonId: 'open-sidebar',
   closeButtonId: 'close-sidebar'
 });
-
-new ContactForm('contact-form');
 
 smoothScroll.init({
   speed: 800,
@@ -29,20 +31,27 @@ gumshoe.init({
   offset: 50
 });
 
+new ContactForm('contact-form');
+
+/**
+ * Event listeners
+ */
+
 toggleContactFormButton.addEventListener('click', contactForm.toggle.bind(contactForm), false);
 
-// Polyfill IntersectionObserver
+/**
+ * Polyfills
+ */
+
 if (window.IntersectionObserver === undefined) {
   const script = document.createElement('script');
 
   script.src = '/vendor/intersection-observer-polyfill.min.js';
   script.onload = function () {
-    animations.initProgressBarsAnimation();
-    animations.initResumeBoxesAnimation();
+    animations.init();
   };
 
   document.head.appendChild(script);
 } else {
-  animations.initProgressBarsAnimation();
-  animations.initResumeBoxesAnimation();
+  animations.init();
 }

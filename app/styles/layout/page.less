@@ -4,10 +4,10 @@
 
 .l-page {
   will-change: transform;
-  transition: transform @g-transition-speed @g-transition-easing;
+  transition: transform @g-transition-speed @g-transition-ease-in-out-expo;
 }
 
 .l-page--sidebar-is-open {
   transform: translate(-@g-sidebar-width / 2, 0);
-  transition: transform @g-transition-speed @g-transition-easing;
+  transition: transform @g-transition-speed @g-transition-ease-in-out-expo;
 }

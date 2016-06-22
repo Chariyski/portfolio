@@ -30,7 +30,6 @@
       border-style: solid;
       border-width: @testimonial-arrow-size @testimonial-arrow-size 0 0;
       border-color: @g-color-state-secondary transparent transparent transparent;
-
     }
   }
 
@@ -46,5 +45,14 @@
   &__avatar {
     border-radius: 50%;
     margin-right: @g-size-space-base / 2;
+    width: 64px;
+    height: 64px;
+    transform: scale(1);
+    transition: transform @g-transition-speed-slow @g-transition-ease-in-out-back;
+
+    &--is-not-loaded {
+      transform: scale(0);
+      transition: transform @g-transition-speed-slow @g-transition-ease-in-out-back;
+    }
   }
 }

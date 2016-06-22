@@ -7,25 +7,12 @@ const progressBarsAnimation = {
   init() {
     const progressBars = Array.prototype.slice.call(document.querySelectorAll('.c-progress__bar'));
 
-    progressBars.forEach(this._prepareProgressBarsForAnimations);
-
     this._observer = new IntersectionObserver(this._intersectionObserverHandler.bind(this), {
       threshold: [0],
       rootMargin: '-50px 0px'
     });
 
     progressBars.forEach((progressBar) => this._observer.observe(progressBar));
-  },
-
-  /**
-   * Set the progress bar to zero, so that they can be animated.
-   * TODO if the polyfill works this is unneeded and need to be transfer to CSS
-   * @param {Element} progressBar - Progress bar DOM element.
-   * @private
-   * @returns {undefined}
-   */
-  _prepareProgressBarsForAnimations(progressBar) {
-    progressBar.setAttribute('data-progress', 0);
   },
 
   /**
@@ -45,7 +32,6 @@ const progressBarsAnimation = {
   /**
    * Animate progress bar value.
    * @param {Element} progressBar - Progress bar DOM element.
-   * @param {number} timestamp - timestamp from requestAnimationFrame.
    * @private
    * @returns {undefined}
    */
@@ -106,7 +92,50 @@ const resumeBoxesAnimation = {
   }
 };
 
+const testimonialsAnimation = {
+
+  /**
+   * Initialize resume boxes animation.
+   * @returns {undefined}
+   */
+  init() {
+    const avatars = Array.prototype.slice.call(document.querySelectorAll('[data-lazy-load="image"]'));
+
+    this._observer = new IntersectionObserver(this._intersectionObserverHandler.bind(this), {
+      threshold: [0],
+      rootMargin: '-100px 0px'
+    });
+
+    avatars.forEach((avatar) => this._observer.observe(avatar));
+  },
+
+  /**
+   * Intersection observer handler.
+   * @param {Array} changes - Array with changes in the intersection of a target element with an ancestor element.
+   * @private
+   * @returns {undefined}
+   */
+  _intersectionObserverHandler(changes) {
+    changes.forEach((change) => {
+      if (navigator.onLine === false) {
+        return;
+      }
+
+      change.target.onload = requestAnimationFrame(() => {
+        change.target.classList.remove('c-testimonial__avatar--is-not-loaded');
+      });
+
+      change.target.src = change.target.getAttribute('data-src');
+
+      this._observer.unobserve(change.target);
+    });
+  }
+};
+
 export default {
-  initProgressBarsAnimation: progressBarsAnimation.init.bind(progressBarsAnimation),
-  initResumeBoxesAnimation: resumeBoxesAnimation.init.bind(resumeBoxesAnimation)
+  init() {
+    progressBarsAnimation.init();
+    resumeBoxesAnimation.init();
+    testimonialsAnimation.init();
+  }
 };
