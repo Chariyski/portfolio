@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Footer styles
+   ========================================================================== */
+
+.l-footer {
+  background-image: url('../images/footer/background.jpg');
+  background-size: cover;
+  padding: @g-size-space-base * 2 @g-section-padding;
+  min-height: 100vh;
+}
+
+.l-contacts {
+  background: @g-color-state-secondary;
+  display: inline-block;
+  color: white;
+  padding: @g-size-space-base * 2 @g-size-space-base;
+  max-width: 380px;
+
+  ul {
+    list-style: none;
+    margin: @g-size-space-base * 2 0;
+
+    li {
+      svg {
+        fill: @g-color-state-primary;
+        margin-right: @g-size-space-base / 2;
+      }
+    }
+
+    li:not(:last-of-type) {
+      margin-bottom: @g-margin-bottom;
+    }
+  }
+}

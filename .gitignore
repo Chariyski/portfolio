@@ -1,0 +1,6 @@
+# Editors
+.idea
+
+# Folders
+build
+node_modules

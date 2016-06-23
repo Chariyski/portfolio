@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Headings styles
+   ========================================================================== */
+
+.e-heading {
+  &:extend(.u-margin-bottom-all-without-last-child all);
+
+  color: currentColor;
+
+  &--large {
+    font-size: @g-font-size-xx-huge;
+  }
+
+  &&--marginless {
+    margin: 0;
+  }
+
+  &&--compact {
+    line-height: 1;
+  }
+}
+
+.e-subheading {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 1.62;
+  color: @g-color-state-tertiary;
+}

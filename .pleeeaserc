@@ -1,0 +1,11 @@
+{
+  "in": ["app/styles/main.less"],
+  "out": "build/styles/main.css",
+  "less": true,
+  "browsers": ["last 3 versions"],
+  "sourcemaps": {
+    "map": {
+      "inline": false
+    }
+  }
+}

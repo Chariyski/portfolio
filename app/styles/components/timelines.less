@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Timelines styles
+   ========================================================================== */
+
+@timeline-event-circle-diameter: 10px;
+@timeline-event-circle-offset: @timeline-event-circle-diameter / 2 + 1px;
+
+.c-timeline {
+  &:extend(.u-margin-bottom-all-without-last-child all);
+
+  list-style: none;
+  font-size: 0.875rem;
+  border-left: 2px solid @g-color-grey-light;
+
+  &-event {
+    &:extend(.u-margin-bottom-all-without-last-child all);
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: @g-size-space-base * 2;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: @timeline-event-circle-offset;
+      left: -@timeline-event-circle-offset;
+      width: @timeline-event-circle-diameter;
+      height: @timeline-event-circle-diameter;
+      border-radius: 50%;
+      background: @g-color-state-primary;
+    }
+
+    &__date {
+      font-size: 0.875em;
+      font-weight: bold;
+      margin-bottom: @g-size-space-base / 2;
+    }
+
+    &__name {
+      &:extend(.u-margin-bottom-zero all);
+
+      color: @g-color-grey-darker;
+      font-weight: bold;
+      font-size: 1em;
+      line-height: @g-font-line-height-base;
+    }
+
+    &__description {
+      font-size: 0.875em;
+
+    }
+  }
+}

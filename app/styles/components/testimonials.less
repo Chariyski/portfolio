@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Testimonials styles
+   ========================================================================== */
+
+@testimonial-arrow-size: 1em;
+@testimonial-avatar-size: 3.75em;
+
+.c-testimonial {
+  &:extend(.u-margin-bottom-all-without-last-child all);
+
+  color: white;
+  border: none;
+  background: transparent;
+
+  &__content {
+    background: @g-color-state-secondary;
+    margin-bottom: @g-size-space-base;
+    padding: 1em;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -@testimonial-arrow-size;
+      left: @testimonial-avatar-size / 2;
+
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: @testimonial-arrow-size @testimonial-arrow-size 0 0;
+      border-color: @g-color-state-secondary transparent transparent transparent;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+
+    a {
+      color: currentColor
+    }
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    margin-right: @g-size-space-base / 2;
+    width: 64px;
+    height: 64px;
+    transform: scale(1);
+    transition: transform @g-transition-speed-slow @g-transition-ease-in-out-back;
+
+    &--is-not-loaded {
+      transform: scale(0);
+      transition: transform @g-transition-speed-slow @g-transition-ease-in-out-back;
+    }
+  }
+}

@@ -1,0 +1,109 @@
+// Core
+
+@g-font-size-base: 16px;
+
+@g-font-line-height-base: @g-font-size-base * 1.5; // 24px
+
+@g-size-space-large: @g-size-space-base * 2;
+@g-size-space-base: @g-font-size-base * 1.5; // 24px
+@g-size-space-small: @g-size-space-base / 2;
+
+// Colors
+
+@g-color-grey-darker: #282828;
+@g-color-grey-dark: #909090;
+@g-color-grey: #b7b7b7;
+@g-color-grey-light: #ececec;
+@g-color-grey-lighter: #f1f1f1;
+
+@g-color-blue: #42afe3;
+@g-color-green: #97cd76;
+@g-color-orange: #f68b39;
+@g-color-purple: #847bb9;
+@g-color-red: #ed6c63;
+@g-color-turquoise: #1fc8db;
+@g-color-yellow: #fce473;
+
+@g-color-state-primary: #3aa8db;
+@g-color-state-secondary: #31485e;
+@g-color-state-tertiary: #caa669;
+@g-color-state-shadow: rgba(0, 0, 0, 0.1);
+
+@g-color-background-grey-lighter: @g-color-grey-lighter;
+
+// Semantic Colors
+
+@g-color-state-info: @g-color-blue;
+@g-color-state-info-invert: spin(@g-color-state-info, 180);
+@g-color-state-success: @g-color-green;
+@g-color-state-success-invert: spin(@g-color-state-success, 180);
+@g-color-state-warning: @g-color-yellow;
+@g-color-state-warning-invert: spin(@g-color-state-warning, 180);
+@g-color-state-danger: @g-color-red;
+@g-color-state-danger-invert: spin(@g-color-state-danger, 180);
+
+@g-color-border: @g-color-grey-light;
+@g-color-border-hover: @g-color-grey;
+
+// Text
+
+@g-color-text: @g-color-grey-dark;
+@g-color-text-invert: findColorInvert(@g-color-text);
+@g-color-text-light: @g-color-grey;
+@g-color-text-strong: @g-color-grey-darker;
+
+// Typography
+
+@g-font-family-primary: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+@g-font-family-secondary: "Roboto Condensed", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+@g-font-family-monospace: "Source Code Pro", "Monaco", "Inconsolata", monospace;
+
+@g-font-size-xx-huge: 3.25rem;
+@g-font-size-x-huge: 1.75rem;
+@g-font-size-huge: 1.50rem;
+@g-font-size-large: 1.25rem;
+@g-font-size-medium: 1.125rem;
+@g-font-size-small: 0.875rem;
+@g-font-size-tiny: 0.75rem;
+
+// Breakpoints
+
+@g-media-query-phome: ~"(max-width: 30em)";
+@g-media-query-tablet: ~"(max-width: 48em)";
+@g-media-query-desktop: ~"(max-width: 62em)";
+@g-media-query-widescreen: ~"(max-width: 74em)";
+
+// Dimensions
+
+@g-size-column-gap: @g-size-space-base;
+@g-margin-bottom: @g-size-space-base;
+@g-section-padding: 10%;
+
+// Miscellaneous
+
+@g-transition-linear: linear;
+@g-transition-ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+@g-transition-ease-in-out-back: cubic-bezier(0.325, -0.075, 0, 1.65);
+@g-transition-speed: 200ms;
+@g-transition-speed-slow: 500ms;
+
+@g-border-radius-large: 40px;
+@g-border-radius-tiny: 5px;
+
+// Links
+
+@g-color-link: @g-color-state-primary;
+@g-color-link-visited: @g-color-purple;
+@g-color-link-hover: @g-color-grey-darker;
+@g-color-link-hover-background: @g-color-grey-lighter;
+@g-color-link-hover-border: @g-color-grey-darker;
+@g-color-link-active: @g-color-grey-darker;
+@g-color-link-active-border: @g-color-grey-darker;
+
+// Z-index master list
+
+@g-zindex-sidebar: 1100;
+@g-zindex-fixed-icons: 1000;
+
+// Components
+@g-sidebar-width: 300px;

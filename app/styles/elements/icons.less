@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Icons styles
+   ========================================================================== */
+
+.e-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: @g-font-size-base;
+  width: 3.5em;
+  height: 3.5em;
+  background: @g-color-state-primary;
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 30px 0 @g-color-state-shadow;
+  transition: background @g-transition-speed @g-transition-ease-in-out-expo, color @g-transition-speed @g-transition-ease-in-out-expo;
+
+  &:hover {
+    background: white;
+    color: @g-color-state-primary;
+  }
+
+  svg {
+    width: 1.5em;
+    height: 1.5em;
+    fill: currentColor;
+  }
+
+  &--small {
+    font-size: 0.6875em;
+  }
+
+  &--clickable {
+    cursor: pointer;
+  }
+
+  &--inverted {
+    color: @g-color-state-primary;
+    background: white;
+
+    &:hover {
+      color: white;
+      background: @g-color-state-primary;
+    }
+  }
+
+  &--floating-top-right,
+  &--floating-bottom-right {
+    position: fixed;
+    right: 1rem;
+    z-index: @g-zindex-fixed-icons;
+    will-change: transform;
+  }
+
+  &--floating-top-right {
+    top: 1rem;
+  }
+
+  &--floating-bottom-right {
+    bottom: 1rem;
+  }
+
+  &--linkedin {
+    background-color: #4997cf;
+
+    &:hover {
+      color: #4997cf;
+    }
+  }
+
+  &--github {
+    background-color: black;
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  &--facebook {
+    background-color: #4e69a2;
+
+    &:hover {
+      color: #4e69a2;
+    }
+  }
+
+}

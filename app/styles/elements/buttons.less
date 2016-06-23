@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Buttons styles
+   ========================================================================== */
+
+@button-transition: background @g-transition-speed @g-transition-ease-in-out-expo, transform @g-transition-speed @g-transition-ease-in-out-expo;
+
+.e-button {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.7rem;
+  margin-bottom: @g-margin-bottom;
+  color: @g-color-link;
+  background: transparent;
+  border: none;
+  border-radius: @g-border-radius-large;
+  font-size: 1rem;
+  line-height: @g-size-space-base;
+  white-space: nowrap;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  user-select: none;
+  overflow: hidden;
+  perspective: 1px;
+  transition: @button-transition;
+
+  &&--is-hover,
+  &:hover {
+    color: @g-color-link-hover;
+    transition: @button-transition;
+
+    .e-button__icon,
+    span {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &:active {
+    outline: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &&--primary,
+  &&--secondary,
+  &&--white {
+    color: white;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &&--primary {
+    background: @g-color-state-primary;
+  }
+
+  &&--secondary {
+    background: @g-color-state-secondary;
+  }
+
+  &&--large {
+    padding: 1rem;
+  }
+
+  &&--small {
+    padding: 0.5rem;
+  }
+
+  &__icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    transform: translate3d(40px, 40px, 0);
+    transition: @button-transition;
+  }
+
+  span {
+    display: inline-block;
+    transform: translate3d(0.5em, 0, 0);
+    transition: @button-transition;
+  }
+}

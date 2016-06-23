@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Sidebar styles
+   ========================================================================== */
+
+.l-sidebar {
+  background: white;
+  padding: 1em 2em;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: @g-sidebar-width;
+  z-index: @g-zindex-sidebar;
+  overflow-x: hidden;
+  box-shadow: -2px 2px 60px 0 @g-color-state-shadow;
+
+  will-change: transform;
+  transform: translate(100%, 0);
+  transition: transform @g-transition-speed @g-transition-ease-in-out-expo;
+
+  &--wider {
+    width: @g-sidebar-width * 1.2;
+  }
+
+  &--opened {
+    transform: translate(0, 0);
+  }
+
+  &--color-primary {
+    color: white;
+    background: @g-color-state-primary;
+  }
+}
+
+@media @g-media-query-phome {
+  .l-sidebar {
+    width: 100%;
+  }
+}

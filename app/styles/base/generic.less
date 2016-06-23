@@ -1,0 +1,173 @@
+// TODO refactor entire file
+
+html {
+  font-size: @g-font-size-base;
+  min-width: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: @g-font-family-primary;
+}
+
+code,
+pre {
+  font-family: monospace;
+  line-height: 1.25;
+}
+
+body {
+  color: @g-color-text;
+  font-size: 1rem;
+  line-height: @g-font-line-height-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &:extend(.u-margin-bottom-all-without-last-child all);
+
+  color: @g-color-grey-darker;
+  font-weight: lighter;
+  font-family: @g-font-family-secondary;
+  line-height: @g-font-line-height-base * 2;
+}
+
+h1 {
+  font-size: @g-font-size-xx-huge;
+}
+
+h2 {
+  font-size: @g-font-size-x-huge;
+}
+
+h3 {
+  font-size: @g-font-size-huge;
+}
+
+h4 {
+  font-size: @g-font-size-large;
+}
+
+h5 {
+  font-size: @g-font-size-medium;
+}
+
+h6 {
+  font-size: @g-font-size-base;
+}
+
+p:not(:last-child) {
+  margin-bottom: @g-size-space-base / 2;
+}
+
+a {
+  color: @g-color-link;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    color: @g-color-link-hover;
+  }
+}
+
+ol,
+ul {
+  &:extend(.u-margin-bottom-all-without-last-child all);
+}
+
+ol {
+  list-style: decimal outside;
+}
+
+ul {
+  list-style: disc outside;
+
+  ul {
+    list-style-type: circle;
+
+    ul {
+      list-style-type: square;
+    }
+  }
+}
+
+blockquote {
+  &:extend(.u-margin-bottom-all-without-last-child all);
+
+  background: #f5f7fa;
+  border-left: 5px solid #d3d6db;
+  padding: 1.5em;
+}
+
+code {
+  background: @g-color-background-grey-lighter;
+  color: @g-color-red;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 1px 2px 2px;
+}
+
+hr {
+  border-top-color: @g-color-border;
+  margin: 20px 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  vertical-align: baseline;
+}
+
+small {
+  font-size: @g-font-size-tiny;
+}
+
+pre {
+  background: @g-color-background-grey-lighter;
+  color: @g-color-text;
+  white-space: pre;
+  word-wrap: normal;
+  code {
+    background: @g-color-background-grey-lighter;
+    color: @g-color-text;
+    display: block;
+    overflow-x: auto;
+    padding: 16px 20px;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: @g-color-text-strong;
+}

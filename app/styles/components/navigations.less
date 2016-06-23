@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Navigations styles
+   ========================================================================== */
+
+.c-navigation {
+  display: inherit;
+  flex-direction: inherit;
+  list-style: none;
+  font-size: 0.875em;
+
+  &__item {
+    display: inherit;
+    border-bottom: 1px solid @g-color-border;
+    will-change: transform;
+
+    &:last-of-type {
+      border: none;
+    }
+
+    a {
+      position: relative;
+      color: @g-color-text-strong;
+      padding: @g-size-space-base / 2 0;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0.25em;
+        left: -1em;
+        bottom: 0.25em;
+        right: -1em;
+        z-index: -1;
+
+        background-color: #3aa8db;
+        border-radius: @g-border-radius-large;
+
+        transform: scale(0);
+        opacity: 0;
+        visibility: hidden;
+        transition: all @g-transition-speed cubic-bezier(.175, .885, .32, 1.275);
+      }
+
+      &:hover {
+        color: @g-color-state-primary;
+      }
+    }
+
+    &--is-active {
+      a {
+        color: white;
+
+        &::before {
+          transform: scale(1);
+          opacity: 1;
+          visibility: visible;
+        }
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+
+  }
+}
