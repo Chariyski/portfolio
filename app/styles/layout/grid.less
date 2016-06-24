@@ -4,8 +4,8 @@
 
 .l-grid {
   display: flex;
-  margin-left: -@g-size-space-base;
-  margin-right: -@g-size-space-base;
+  margin-left: -@g-size-column-gap;
+  margin-right: -@g-size-column-gap;
 
   &--centered {
     justify-content: center;
@@ -31,7 +31,7 @@
 
 .l-grid__column {
   flex: 1;
-  padding: 0 @g-size-space-base;
+  padding: 0 @g-size-column-gap;
 
   &--has-min-width {
     min-width: 250px;

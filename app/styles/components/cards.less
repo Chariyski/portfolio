@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Card styles
+   ========================================================================== */
+
+.c-card {
+  &:extend(.u-margin-bottom-all-without-last-child all);
+
+  position: relative;
+  overflow: hidden;
+
+  &__image {
+    display: block;
+  }
+
+  &__caption {
+    background: white;
+    padding: @g-size-space-base @g-size-space-base / 2;
+    text-align: center;
+  }
+
+  &__title {
+    font-family: @g-font-family-primary;
+    font-size: @g-font-size-base;
+    font-weight: bold;
+    line-height: 1;
+    text-transform: none;
+    color: currentColor;
+  }
+
+  &__subtitle {
+    font-size: @g-font-size-tiny;
+  }
+}
