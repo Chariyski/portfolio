@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Masonry styles
+   ========================================================================== */
+
+.l-masonry {
+  column-count: 4;
+}
+
+.l-masonry__item {
+  width: 100%;
+  break-inside: avoid;
+  display: inline-block;
+}
+
+
+@media @g-media-query-desktop {
+  .l-masonry {
+    column-count: 3;
+  }
+}
+
+@media @g-media-query-tablet {
+  .l-masonry {
+    column-count: 2;
+  }
+}
+
+@media @g-media-query-phone {
+  .l-masonry {
+    column-count: 1;
+  }
+}

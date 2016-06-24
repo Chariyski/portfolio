@@ -5,11 +5,35 @@
 .c-card {
   &:extend(.u-margin-bottom-all-without-last-child all);
 
-  position: relative;
   overflow: hidden;
 
+  &:hover {
+    .c-card__image::after {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
   &__image {
-    display: block;
+    position: relative;
+    cursor: pointer;
+
+    img {
+      display: block;
+      min-width: 100%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.70);
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 
   &__caption {
