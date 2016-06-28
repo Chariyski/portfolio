@@ -1,5 +1,6 @@
 var Version = require('node-version-assets');
 var criticalCSS = require('critical');
+var smushit = require('node-smushit');
 
 var versionInstance = new Version({
   assets: ['build/styles/main.css', 'build/scripts/bundle.js'],
@@ -26,3 +27,6 @@ criticalCSS.generate({
 }).error(function (err) {
   console.log(err);
 });
+
+// Image optimization
+smushit.smushit('build/images', {recursive: true});
