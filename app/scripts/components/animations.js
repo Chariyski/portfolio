@@ -121,11 +121,17 @@ const testimonialsAnimation = {
         return;
       }
 
+      const targetSRC = change.target.getAttribute('data-src');
+      const targetSRCSET = change.target.getAttribute('data-srcset');
+
       change.target.onload = requestAnimationFrame(() => {
         change.target.classList.remove('c-testimonial__avatar--is-not-loaded');
       });
 
-      change.target.src = change.target.getAttribute('data-src');
+      if (targetSRCSET) {
+        change.target.srcset = targetSRCSET;
+      }
+      change.target.src = targetSRC;
 
       this._observer.unobserve(change.target);
     });
