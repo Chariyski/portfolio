@@ -6,7 +6,7 @@ import smoothScroll from 'smooth-scroll';
 import gumshoe from 'gumshoe';
 
 const toggleContactFormButton = document.getElementById('toggle-contact-form');
-
+const portfolioSection = document.getElementById('portfolio');
 const contactForm = new Sidebar('contact-form-sidebar', {
   openButtonId: 'open-contact-form',
   closeButtonId: 'close-contact-form'
@@ -22,9 +22,7 @@ new Sidebar('sidebar', {
   closeButtonId: 'close-sidebar'
 });
 
-new Modal('modal', {
-  autoClickHandlerAttach: true
-});
+const portfolioModal = new Modal('modal-portfolio');
 
 smoothScroll.init({
   speed: 800,
@@ -43,6 +41,14 @@ new ContactForm('contact-form');
  */
 
 toggleContactFormButton.addEventListener('click', contactForm.toggle.bind(contactForm), false);
+
+portfolioSection.addEventListener('click', function (event) {
+  const target = event.target;
+
+  if (target.getAttribute('data-modal') !== null) {
+    portfolioModal.open(target);
+  }
+}, false);
 
 /**
  * Polyfills

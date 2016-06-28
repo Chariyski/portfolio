@@ -32,15 +32,29 @@
 
   &--clickable {
     cursor: pointer;
+
+    svg,
+    use {
+      pointer-events: none;
+    }
+  }
+
+  &--inverted,
+  &--inverted-transparent {
+    color: @g-color-state-primary;
+    background: white;
   }
 
   &--inverted {
-    color: @g-color-state-primary;
-    background: white;
-
     &:hover {
       color: white;
       background: @g-color-state-primary;
+    }
+  }
+
+  &--inverted-transparent {
+    &:hover {
+      background: transparent;
     }
   }
 
@@ -83,5 +97,4 @@
       color: #4e69a2;
     }
   }
-
 }

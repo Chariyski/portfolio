@@ -1,54 +1,78 @@
 import * as md from 'markdown';
 import ajax from '../module/ajax';
 
-const markdown = md.markdown;
-const CLASS = {
-  modalIsOpen: 'c-modal--is-open',
-  modalIsClose: 'c-modal--is-close'
+const markdownToHTML = md.markdown.toHTML;
+const modalClassName = {
+  opened: 'c-modal--is-open',
+  closed: 'c-modal--is-close',
+  content: 'c-modal__content'
 };
 
+/**
+ * Modal dialog.
+ */
 class Modal {
 
-  constructor(elementId, options) {
-    if (!elementId) {
+  /**
+   * @param {string} elementId - ID of a DOM node that will be the root element of the Modal.
+   * @constructor
+   */
+  constructor(elementId) {
+    const modalDOMref = document.getElementById(elementId);
+
+    if (modalDOMref === null) {
       throw new Error('Modal component requires an ID of a DOM node as a first argument');
     }
 
-    if (options) {
-      this._autoClickHandlerAttach = options.autoClickHandlerAttach;
-    }
-
-    this._DOMref = document.getElementById(elementId);
+    this._DOMref = modalDOMref;
+    this._contentDOMref = this._DOMref.querySelector(`.${modalClassName.content}`);
     this._initializeEventHandlers();
   }
 
+  /**
+   * Show the modal.
+   * @param {Element} openerElement - The DOM element that triggers the modal opening.
+   * @returns {Modal}
+   */
   open(openerElement) {
     const ajaxFile = openerElement.getAttribute('data-modal-ajax');
 
     if (ajaxFile) {
       ajax.get(ajaxFile).then(this._ajaxSuccess.bind(this), this._ajaxError.bind(this));
-    } else {
-      this._DOMref.classList.add(CLASS.modalIsOpen);
     }
+
+    document.querySelector('html').style.overflow = 'hidden';
+    this._DOMref.classList.add(modalClassName.opened);
 
     return this;
   }
 
+  /**
+   * Hide the modal
+   * @returns {Modal}
+   */
   close() {
-    this._DOMref.classList.remove(CLASS.modalIsOpen);
+    this._DOMref.classList.remove(modalClassName.opened);
     document.querySelector('html').style.overflow = 'auto';
 
     return this;
   }
 
+  /**
+   * Initialize event handlers.
+   * @private
+   * @returns {undefined}
+   */
   _initializeEventHandlers() {
     this._DOMref.addEventListener('click', this._clickEventHandlers.bind(this), false);
-
-    if (this._autoClickHandlerAttach) {
-      this._openersHandler()
-    }
   }
 
+  /**
+   * Click handler.
+   * @param {Object} event - click event object.
+   * @private
+   * @returns {undefined}
+   */
   _clickEventHandlers(event) {
     const target = event.target;
 
@@ -57,27 +81,24 @@ class Modal {
     }
   }
 
-  _openersHandler() {
-    const modalDialogOpeners = Array.prototype.slice.call(document.querySelectorAll('[data-modal]'));
-    const that = this;
-
-    modalDialogOpeners.forEach(function (element) {
-      element.addEventListener('click', function (event) {
-        that.open(event.target);
-      }, false);
-    });
-  }
-
+  /**
+   * Handle AJAX call success.
+   * @param {Object} response - AJAX response object
+   * @private
+   * @returns {undefined}
+   */
   _ajaxSuccess(response) {
-    this._DOMref.querySelector('.c-modal__content').innerHTML = markdown.toHTML(response);
-
-    document.querySelector('html').style.overflow = 'hidden';
-
-    this._DOMref.classList.add(CLASS.modalIsOpen);
+    this._contentDOMref.innerHTML = markdownToHTML(response);
   }
 
+  /**
+   * Handle AJAX call error.
+   * @param {Object} error - AJAX response object
+   * @private
+   * @returns {undefined}
+   */
   _ajaxError(error) {
-    console.error('Failed', error); // TODO
+    this._contentDOMref.innerHTML = error.message;
   }
 }
 

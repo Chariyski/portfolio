@@ -371,13 +371,31 @@
 
       <!-- Portfolio / start -->
       <article class="l-section l-section--grey-colored" id="portfolio">
-        <h2 class="l-section__heading">Portfolio</h2>
+        <h2 class="l-section__heading">Some of my projects</h2>
 
         <div class="l-masonry">
           <!-- Project / start-->
           <figure class="c-card l-masonry__item">
-            <div class="c-card__image" data-modal="portfolio" data-modal-ajax="/markdown/test.md">
-              <img src="images/portfolio/tech-talks/thumbnail.jpg" alt="Tech Talks website">
+            <div class="c-card__image">
+              <img src="images/portfolio/techtalks/thumbnail.jpg" alt="Tech Talks website">
+
+              <div class="c-card__hover">
+                <div class="c-icon-box ">
+                  <a class="e-icon" href="http://techtalks.bg/" target="_blank" rel="nofollow">
+                    <svg>
+                      <use xlink:href="#icon-link"></use>
+                    </svg>
+                  </a>
+
+                  <span class="e-icon e-icon--clickable e-icon--inverted-transparent"
+                        data-modal="portfolio"
+                        data-modal-ajax="/markdown/portfolio/techtalks.md">
+                    <svg>
+                      <use xlink:href="#icon-play"></use>
+                    </svg>
+                  </span>
+                </div>
+              </div>
             </div>
 
             <figcaption class="c-card__caption">
@@ -392,7 +410,7 @@
 
           <!-- Project / start-->
           <figure class="c-card l-masonry__item">
-            <div class="c-card__image" data-modal="portfolio" data-modal-ajax="/markdown/test.md">
+            <div class="c-card__image">
               <img src="images/portfolio/ui5-inspector/thumbnail.jpg" alt=">Chrome DevTools extension">
             </div>
 
@@ -410,7 +428,7 @@
 
           <!-- Project / start-->
           <figure class="c-card l-masonry__item">
-            <div class="c-card__image" data-modal="portfolio" data-modal-ajax="/markdown/test.md">
+            <div class="c-card__image">
               <img src="images/portfolio/openui5/thumbnail.png" alt="OpenUI5 logo">
             </div>
 
@@ -426,7 +444,7 @@
 
           <!-- Project / start-->
           <figure class="c-card l-masonry__item">
-            <div class="c-card__image" data-modal="portfolio" data-modal-ajax="/markdown/test.md">
+            <div class="c-card__image">
               <img src="images/portfolio/grunt-nexus-downloader/thumbnail.png" alt="Grunt logo">
             </div>
 
@@ -442,7 +460,7 @@
 
           <!-- Project / start-->
           <figure class="c-card l-masonry__item">
-            <div class="c-card__image" data-modal="portfolio" data-modal-ajax="/markdown/test.md">
+            <div class="c-card__image">
               <img src="images/portfolio/jira-cards/thumbnail.jpg" alt="JIRA Cards for Task Board logo">
             </div>
 
@@ -461,7 +479,7 @@
 
           <!-- Project / start-->
           <figure class="c-card l-masonry__item">
-            <div class="c-card__image" data-modal="portfolio" data-modal-ajax="/markdown/test.md">
+            <div class="c-card__image">
               <img src="http://placehold.it/350x250" alt="">
             </div>
 
@@ -474,8 +492,26 @@
 
           <!-- Project / start-->
           <figure class="c-card l-masonry__item">
-            <div class="c-card__image" data-modal="portfolio" data-modal-ajax="/markdown/test.md">
+            <div class="c-card__image">
               <img src="images/portfolio/findy/thumbnail.jpg" alt="Findy website">
+
+              <div class="c-card__hover">
+                <div class="c-icon-box ">
+                  <a class="e-icon" href="http://findy.bg/" target="_blank" rel="nofollow">
+                    <svg>
+                      <use xlink:href="#icon-link"></use>
+                    </svg>
+                  </a>
+
+                  <span class="e-icon e-icon--clickable e-icon--inverted-transparent"
+                        data-modal="portfolio"
+                        data-modal-ajax="/markdown/portfolio/findy.md">
+                    <svg>
+                      <use xlink:href="#icon-play"></use>
+                    </svg>
+                  </span>
+                </div>
+              </div>
             </div>
 
             <figcaption class="c-card__caption">
@@ -784,7 +820,7 @@
     <!-- Floating buttons for sidebars / end -->
 
     <!-- Modal dialog / start -->
-    <div id="modal" class="c-modal">
+    <div id="modal-portfolio" class="c-modal">
       <div class="c-modal__overlay" data-modal-close></div>
       <div class="c-modal__wrapper">
         <div class="c-modal__morph">
@@ -793,11 +829,10 @@
           </svg>
         </div>
 
-        <div class="c-modal__content">
-          <h2><strong>Howdy</strong>, I'm a dialog box</h2>
-          <div>
-            <button data-modal-close>Close</button>
-          </div>
+        <div class="c-modal__content e-content">
+          <svg class="c-modal__loading-indicator">
+            <use xlink:href="#icon-loading"></use>
+          </svg>
         </div>
       </div>
     </div>
@@ -867,10 +902,15 @@
           <path d="M43.129,48.939c1.229-1.789,1.897-4.023,2.011-6.593c-0.336-3.017-1.452-6.369-2.458-9.498 c-1.006-2.011-0.113,0,0.668,0.224c3.354,1.117,5.254,0,6.259-2.57c-3.13-6.928-5.812-13.743-9.051-20.559 c-2.572,0.111-4.583,1.006-5.921,2.569l4.357,11.956c-2.572-5.921-5.924-10.056-11.509-9.946c-2.011,0-4.134,1.006-6.259,3.13 c-0.111,0.112-0.223,0.224-0.333,0.334c-1.79,5.14-3.576,10.392-5.364,15.532L0,44.134l2.121,4.246l2.348-0.781l13.744,23.464 L14.412,90.84l6.815,1.787l1.453,0.336l2.348-9.723l5.363,8.604l4.022-0.334l-8.271-14.75l1.676-8.268l6.594-7.932L50.168,93.52 l2.793-2.346l2.458-2.122L43.129,48.939z M21.227,60.336l-2.009,4.247L8.042,46.034l13.074-6.593c0-0.112,0.111-0.223,0.111-0.223 c0.782-1.229,1.564-2.347,2.235-3.464c2.458,3.017,4.134,6.145,5.028,9.162L21.227,60.336z"></path>
         </symbol>
 
+        <symbol id="icon-link" viewBox="0 0 16 16">
+          <path d="M6.879 9.934c-0.208 0-0.416-0.079-0.575-0.238-1.486-1.486-1.486-3.905 0-5.392l3-3c0.72-0.72 1.678-1.117 2.696-1.117s1.976 0.397 2.696 1.117c1.486 1.487 1.486 3.905 0 5.392l-1.371 1.371c-0.317 0.317-0.832 0.317-1.149 0s-0.317-0.832 0-1.149l1.371-1.371c0.853-0.853 0.853-2.241 0-3.094-0.413-0.413-0.963-0.641-1.547-0.641s-1.134 0.228-1.547 0.641l-3 3c-0.853 0.853-0.853 2.241 0 3.094 0.317 0.317 0.317 0.832 0 1.149-0.159 0.159-0.367 0.238-0.575 0.238z"></path>
+          <path d="M4 15.813c-1.018 0-1.976-0.397-2.696-1.117-1.486-1.486-1.486-3.905 0-5.392l1.371-1.371c0.317-0.317 0.832-0.317 1.149 0s0.317 0.832 0 1.149l-1.371 1.371c-0.853 0.853-0.853 2.241 0 3.094 0.413 0.413 0.962 0.641 1.547 0.641s1.134-0.228 1.547-0.641l3-3c0.853-0.853 0.853-2.241 0-3.094-0.317-0.317-0.317-0.832 0-1.149s0.832-0.317 1.149 0c1.486 1.486 1.486 3.905 0 5.392l-3 3c-0.72 0.72-1.678 1.117-2.696 1.117z"></path>
+        </symbol>
+
         <symbol id="icon-linkedin" viewBox="0 0 16 16">
-            <path d="M6 6h2.767v1.418h0.040c0.385-0.691 1.327-1.418 2.732-1.418 2.921 0 3.461 1.818 3.461 4.183v4.817h-2.885v-4.27c0-1.018-0.021-2.329-1.5-2.329-1.502 0-1.732 1.109-1.732 2.255v4.344h-2.883v-9z"></path>
-            <path d="M1 6h3v9h-3v-9z"></path>
-            <path d="M4 3.5c0 0.828-0.672 1.5-1.5 1.5s-1.5-0.672-1.5-1.5c0-0.828 0.672-1.5 1.5-1.5s1.5 0.672 1.5 1.5z"></path>
+          <path d="M6 6h2.767v1.418h0.040c0.385-0.691 1.327-1.418 2.732-1.418 2.921 0 3.461 1.818 3.461 4.183v4.817h-2.885v-4.27c0-1.018-0.021-2.329-1.5-2.329-1.502 0-1.732 1.109-1.732 2.255v4.344h-2.883v-9z"></path>
+          <path d="M1 6h3v9h-3v-9z"></path>
+          <path d="M4 3.5c0 0.828-0.672 1.5-1.5 1.5s-1.5-0.672-1.5-1.5c0-0.828 0.672-1.5 1.5-1.5s1.5 0.672 1.5 1.5z"></path>
         </symbol>
 
         <symbol id="icon-map-location" viewBox="0 0 16 16">
@@ -879,6 +919,10 @@
 
         <symbol id="icon-music" viewBox="0 0 16 16">
           <path d="M15.643 0.234c-0.181-0.152-0.409-0.234-0.643-0.234-0.057 0-0.116 0.005-0.174 0.015l-8.501 1.5c-0.478 0.084-0.826 0.499-0.826 0.984v8.585c-0.508-0.368-1.166-0.585-1.897-0.585-0.425 0-0.85 0.070-1.264 0.208-0.949 0.316-1.71 0.951-2.088 1.742-0.292 0.611-0.33 1.277-0.107 1.873 0.381 1.019 1.462 1.677 2.754 1.677 0.425 0 0.85-0.069 1.264-0.208 0.949-0.316 1.71-0.95 2.087-1.74 0.162-0.341 0.239-0.698 0.242-1.052h0.009v-8c0.058 0 0.116-0.005 0.174-0.014l8.328-1.47v6.069c-0.508-0.368-1.166-0.585-1.898-0.585-0.425 0-0.851 0.070-1.264 0.208-0.949 0.316-1.71 0.951-2.087 1.742-0.292 0.611-0.33 1.277-0.107 1.873 0.381 1.019 1.461 1.677 2.754 1.677 0.425 0 0.851-0.069 1.264-0.208 0.948-0.316 1.709-0.95 2.087-1.74 0.163-0.341 0.239-0.698 0.242-1.052h0.009v-10.5c0-0.295-0.131-0.576-0.357-0.765zM3.844 14.844c-1.198 0.399-2.437 0.009-2.764-0.87-0.329-0.88 0.375-1.917 1.573-2.316s2.437-0.010 2.764 0.87c0.33 0.88-0.375 1.917-1.573 2.316zM13.326 13.344c-1.199 0.399-2.438 0.009-2.765-0.87-0.329-0.88 0.376-1.917 1.573-2.316 1.199-0.399 2.438-0.010 2.765 0.87 0.329 0.88-0.374 1.917-1.573 2.316zM14.98 2.5l-8.501 1.5v-1.5l8.501-1.5v1.5z"></path>
+        </symbol>
+
+        <symbol id="icon-play" viewBox="0 0 16 16">
+          <path d="M3 2l10 6-10 6z"></path>
         </symbol>
 
         <symbol id="icon-puzzle" viewBox="0 0 102 102">
