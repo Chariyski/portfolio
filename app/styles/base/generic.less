@@ -1,4 +1,6 @@
-// TODO refactor entire file
+/* ==========================================================================
+   Card styles
+   ========================================================================== */
 
 html {
   font-size: @g-font-size-base;
@@ -82,92 +84,11 @@ a {
   }
 }
 
-ol,
-ul {
-  &:extend(.u-margin-bottom-all-without-last-child all);
-}
-
-ol {
-  list-style: decimal outside;
-}
-
-ul {
-  list-style: disc outside;
-
-  ul {
-    list-style-type: circle;
-
-    ul {
-      list-style-type: square;
-    }
-  }
-}
-
-blockquote {
-  &:extend(.u-margin-bottom-all-without-last-child all);
-
-  background: #f5f7fa;
-  border-left: 5px solid #d3d6db;
-  padding: 1.5em;
-}
-
-code {
-  background: @g-color-background-grey-lighter;
-  color: @g-color-red;
-  font-size: 12px;
-  font-weight: normal;
-  padding: 1px 2px 2px;
-}
-
-hr {
-  border-top-color: @g-color-border;
-  margin: 20px 0;
-}
-
 img {
   max-width: 100%;
 }
 
 svg {
-  width: 1em;
-  height: 1em;
   vertical-align: middle;
   fill: currentColor;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-  vertical-align: baseline;
-}
-
-small {
-  font-size: @g-font-size-tiny;
-}
-
-pre {
-  background: @g-color-background-grey-lighter;
-  color: @g-color-text;
-  white-space: pre;
-  word-wrap: normal;
-  code {
-    background: @g-color-background-grey-lighter;
-    color: @g-color-text;
-    display: block;
-    overflow-x: auto;
-    padding: 16px 20px;
-  }
-}
-
-table {
-  width: 100%;
-}
-
-th,
-td {
-  text-align: left;
-  vertical-align: top;
-}
-
-th {
-  color: @g-color-text-strong;
 }
