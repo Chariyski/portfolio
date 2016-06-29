@@ -2,6 +2,7 @@ import Sidebar from './components/Sidebar';
 import Modal from './components/Modal';
 import ContactForm from './components/Contact-form';
 import animations from './modules/animations';
+import LazyLoad from './modules/lazy-load';
 import smoothScroll from 'smooth-scroll';
 import gumshoe from 'gumshoe';
 
@@ -35,6 +36,8 @@ gumshoe.init({
 });
 
 new ContactForm('contact-form');
+
+new LazyLoad('[data-lazy-load="portfolio-thumbnail"]');
 
 /**
  * Event listeners

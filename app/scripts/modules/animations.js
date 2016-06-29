@@ -1,4 +1,5 @@
-import IntersectionObserverWrapper from './IntersectionObserverWrapper';
+import IntersectionObserverWrapper from './IntersectionObserver-wrapper';
+import LazyLoad from './lazy-load';
 
 /**
  * Animate progress bar value.
@@ -45,36 +46,6 @@ function _resumeBoxIntersectionObserverHandler(changes, observer) {
   });
 }
 
-
-/**
- * Handle testimonials animations.
- * @param {Array} changes - Array with changes in the intersection of a target element with an ancestor element.
- * @param {Object} observer - native IntersectionObserver object.
- * @private
- * @returns {undefined}
- */
-function _testimonialsIntersectionObserverHandler(changes, observer) {
-  changes.forEach((change) => {
-    if (navigator.onLine === false) {
-      return;
-    }
-
-    const targetSRC = change.target.getAttribute('data-src');
-    const targetSRCSET = change.target.getAttribute('data-srcset');
-
-    change.target.onload = requestAnimationFrame(() => {
-      change.target.classList.remove('c-testimonial__avatar--is-not-loaded');
-    });
-
-    if (targetSRCSET) {
-      change.target.srcset = targetSRCSET;
-    }
-    change.target.src = targetSRC;
-
-    observer.unobserve(change.target);
-  });
-}
-
 export default {
   init() {
     this.progressBarObserver = new IntersectionObserverWrapper((changes, observer) => {
@@ -93,9 +64,8 @@ export default {
     });
 
     // Testimonials
-    this.testimonialsObserver = new IntersectionObserverWrapper(_testimonialsIntersectionObserverHandler, {
-      querySelector: '[data-lazy-load="image"]',
-      rootMargin: '-100px 0px'
+    this.testimonialsObserver = new LazyLoad('[data-lazy-load="testimonial-avatar"]', (loadedImage) => {
+      loadedImage.classList.remove('c-testimonial__avatar--is-not-loaded');
     });
   }
 };

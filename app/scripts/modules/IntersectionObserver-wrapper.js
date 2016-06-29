@@ -25,6 +25,14 @@ class IntersectionObserverWrapper {
 
     observableElements.forEach((observableElement) => this._observer.observe(observableElement));
   }
+
+  /**
+   * Get reference to the IntersectionObserver.
+   * @returns {IntersectionObserver}
+   */
+  getObserver() {
+    return this._observer;
+  }
 }
 
 export default IntersectionObserverWrapper;
