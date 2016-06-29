@@ -1,5 +1,5 @@
 import * as md from 'markdown';
-import ajax from '../module/ajax';
+import ajax from '../modules/ajax';
 
 const markdownToHTML = md.markdown.toHTML;
 const modalClassName = {

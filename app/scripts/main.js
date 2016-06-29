@@ -1,7 +1,7 @@
 import Sidebar from './components/Sidebar';
 import Modal from './components/Modal';
 import ContactForm from './components/Contact-form';
-import animations from './components/animations';
+import animations from './modules/animations';
 import smoothScroll from 'smooth-scroll';
 import gumshoe from 'gumshoe';
 
