@@ -5,7 +5,8 @@ const markdownToHTML = md.markdown.toHTML;
 const modalClassName = {
   opened: 'c-modal--is-open',
   closed: 'c-modal--is-close',
-  content: 'c-modal__content'
+  content: 'c-modal__content',
+  loadingIndicator: 'c-modal__loading-indicator'
 };
 
 /**
@@ -26,6 +27,10 @@ class Modal {
 
     this._DOMref = modalDOMref;
     this._contentDOMref = this._DOMref.querySelector(`.${modalClassName.content}`);
+    this._loadingIndicator = `<svg class="${modalClassName.loadingIndicator}">
+                                <use xlink:href="#icon-loading"></use>
+                              </svg>`;
+
     this._initializeEventHandlers();
   }
 
@@ -38,6 +43,7 @@ class Modal {
     const ajaxFile = openerElement.getAttribute('data-modal-ajax');
 
     if (ajaxFile) {
+      this._contentDOMref.innerHTML = this._loadingIndicator;
       ajax.get(ajaxFile).then(this._ajaxSuccess.bind(this), this._ajaxError.bind(this));
     }
 
@@ -55,6 +61,7 @@ class Modal {
     this._DOMref.classList.remove(modalClassName.opened);
     document.querySelector('html').style.overflow = 'auto';
 
+    this._contentDOMref.innerHTML = '';
     return this;
   }
 
