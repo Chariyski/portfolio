@@ -48,8 +48,6 @@ class LazyLoad {
       }
 
       change.target.src = targetSRC;
-
-      that._observer.unobserve(change.target);
     });
   }
 }

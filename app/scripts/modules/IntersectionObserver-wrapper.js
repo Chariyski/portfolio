@@ -18,7 +18,8 @@ class IntersectionObserverWrapper {
   constructor(callback, options) {
     const observableElements = Array.prototype.slice.call(document.querySelectorAll(options.querySelector));
 
-    this._observer = new IntersectionObserver(callback, {
+    this._callback = callback;
+    this._observer = new IntersectionObserver(this._handler.bind(this), {
       threshold: options.threshold || [0],
       rootMargin: options.rootMargin || '-50px 0px'
     });
@@ -32,6 +33,27 @@ class IntersectionObserverWrapper {
    */
   getObserver() {
     return this._observer;
+  }
+
+  /**
+   * IntersectionObserver handler.
+   * @param {Array} changes - Array with changes in the intersection of a target element with an ancestor element.
+   * @param {Object} observer - native IntersectionObserver object.
+   * @private
+   * @returns {undefined}
+   */
+  _handler(changes, observer) {
+    const that = this;
+
+    this._callback(changes, observer);
+
+    changes.forEach((change) => {
+      if (observer) {
+        observer.unobserve(change.target);
+      } else { // Currently the polyfill doesn't return a reference to the observer
+        that._observer.unobserve(change.target);
+      }
+    });
   }
 }
 

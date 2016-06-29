@@ -37,8 +37,6 @@ gumshoe.init({
 
 new ContactForm('contact-form');
 
-new LazyLoad('[data-lazy-load="portfolio-thumbnail"]');
-
 /**
  * Event listeners
  */
@@ -62,10 +60,12 @@ if (window.IntersectionObserver === undefined) {
 
   script.src = '/vendor/intersection-observer-polyfill.min.js';
   script.onload = function () {
+    new LazyLoad('[data-lazy-load="portfolio-thumbnail"]');
     animations.init();
   };
 
   document.head.appendChild(script);
 } else {
+  new LazyLoad('[data-lazy-load="portfolio-thumbnail"]');
   animations.init();
 }
