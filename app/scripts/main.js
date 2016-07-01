@@ -40,7 +40,6 @@ new ContactForm('contact-form');
 /**
  * Event listeners
  */
-console.log('init');
 
 // Dynamically add files for faster load time.
 document.body.onload = function () {

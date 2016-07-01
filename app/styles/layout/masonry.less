@@ -4,12 +4,18 @@
 
 .l-masonry {
   column-count: 4;
+
+  // Remove box-shadow break while using columns in CSS(Webkit bug)
+  padding: @g-size-space-base/4;
+  margin: -@g-size-space-base/4 -@g-size-space-base/4 0 -@g-size-space-base/4;
 }
 
 .l-masonry__item {
   width: 100%;
   break-inside: avoid;
   display: inline-block;
+
+  margin-top: @g-size-space-base/4; // Remove box-shadow break while using columns in CSS(Webkit bug)
 }
 
 @media @g-media-query-widescreen {

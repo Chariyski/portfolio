@@ -4,8 +4,13 @@
 
 .c-card {
   &:extend(.u-margin-bottom-all-without-last-child all);
+  &:extend(.u-shadow-elevation-2dp);
 
   overflow: hidden;
+
+  &:hover {
+    &:extend(.u-shadow-elevation-4dp);
+  }
 
   &__image {
     position: relative;
