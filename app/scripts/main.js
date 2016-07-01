@@ -40,6 +40,12 @@ new ContactForm('contact-form');
 /**
  * Event listeners
  */
+console.log('init');
+
+// Dynamically add files for faster load time.
+document.body.onload = function () {
+  document.getElementById('footer').classList.add('l-footer--background-image');
+};
 
 toggleContactFormButton.addEventListener('click', contactForm.toggle.bind(contactForm), false);
 
