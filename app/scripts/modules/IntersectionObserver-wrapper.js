@@ -19,7 +19,7 @@ class IntersectionObserverWrapper {
     const observableElements = Array.prototype.slice.call(document.querySelectorAll(options.querySelector));
 
     this._callback = callback;
-    this._observer = new IntersectionObserver(this._handler.bind(this), {
+    this._observer = new IntersectionObserver(this._changeHandler.bind(this), {
       threshold: options.threshold || [0],
       rootMargin: options.rootMargin || '-50px 0px'
     });
@@ -42,17 +42,11 @@ class IntersectionObserverWrapper {
    * @private
    * @returns {undefined}
    */
-  _handler(changes, observer) {
-    const that = this;
-
+  _changeHandler(changes, observer) {
     this._callback(changes, observer);
 
     changes.forEach((change) => {
-      if (observer) {
-        observer.unobserve(change.target);
-      } else { // Currently the polyfill doesn't return a reference to the observer
-        that._observer.unobserve(change.target);
-      }
+      observer.unobserve(change.target);
     });
   }
 }
