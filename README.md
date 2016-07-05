@@ -1,6 +1,6 @@
 # My Personal Portfolio
 
-[https://chariyski.com](https://chariyski.com)
+[http://chariyski.com](http://chariyski.com)
 
 ## License
 

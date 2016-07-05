@@ -22,13 +22,17 @@
     width: @g-sidebar-width * 1.2;
   }
 
-  &--opened {
+  &--is-open {
     transform: translate(0, 0);
   }
 
   &--color-primary {
     color: white;
     background: @g-color-state-primary;
+  }
+
+  &--prevent-transition {
+    transition: none;
   }
 }
 
