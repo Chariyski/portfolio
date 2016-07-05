@@ -6,6 +6,7 @@
   &:extend(.u-margin-bottom-all-without-last-child all);
 
   color: currentColor;
+  max-width: 100%; // Fix IE problem with child overflowing from parent element.
 
   &--large {
     font-size: @g-font-size-xx-huge;
