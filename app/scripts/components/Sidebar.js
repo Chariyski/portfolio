@@ -76,8 +76,14 @@ class Sidebar {
    * @returns {undefined}
    */
   _initializeEventHandlers() {
-    this._openButton.addEventListener('click', this.toggle.bind(this), false);
-    this._closeButton.addEventListener('click', this.toggle.bind(this), false);
+    if (this._openButton) {
+      this._openButton.addEventListener('click', this.toggle.bind(this), false);
+    }
+
+    if (this._closeButton) {
+      this._closeButton.addEventListener('click', this.toggle.bind(this), false);
+    }
+
     this._DOMref.addEventListener('click', this._onClick.bind(this), false);
 
     this._DOMref.addEventListener('touchstart', this._onTouchStart.bind(this), false);
