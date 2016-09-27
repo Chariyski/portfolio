@@ -98,7 +98,9 @@ class Sidebar {
    * @returns {undefined}
    */
   _onClick(event) {
-    if (event.target.nodeName === 'A') {
+    const target = event.target;
+
+    if (target === this._DOMref || target.nodeName === 'A') {
       this.close();
     }
   }

@@ -3,32 +3,38 @@
    ========================================================================== */
 
 .l-sidebar {
-  background: white;
-  padding: 1em 2em;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  width: @g-sidebar-width;
+  left: 0;
   z-index: @g-zindex-sidebars;
-  overflow-x: hidden;
-  box-shadow: -2px 2px 60px 0 @g-color-state-shadow;
 
   will-change: transform;
-  transform: translate(120%, 0);
+  transform: translate(200%, 0);
   transition: transform @g-transition-speed @g-transition-ease-in-out-expo;
 
-  &--wider {
-    width: @g-sidebar-width * 1.2;
+  &__wrapper {
+    background: white;
+    padding: 1em 2em;
+    width: @g-sidebar-width;
+    height: 100%;
+    margin-left: auto;
+    overflow-x: hidden;
+    box-shadow: -2px 2px 60px 0 @g-color-state-shadow;
+
+    &--color-primary {
+      color: white;
+      background: @g-color-state-primary;
+    }
+
+    &--wider {
+      width: @g-sidebar-width * 1.2;
+    }
   }
 
   &--is-open {
     transform: translate(0, 0);
-  }
-
-  &--color-primary {
-    color: white;
-    background: @g-color-state-primary;
   }
 
   &--prevent-transition {
@@ -38,6 +44,8 @@
 
 @media @g-media-query-phone {
   .l-sidebar {
-    width: 100%;
+    &__wrapper {
+      width: 100%;
+    }
   }
 }
