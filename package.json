@@ -29,6 +29,7 @@
     "minify:html": "html-minifier --collapse-whitespace ./app/index.html -o ./build/index.html",
     "minify:browserify": "browserify app/scripts/main.js -o build/scripts/bundle.js  -d -t [ babelify ] -p [minifyify --map build/scripts/bundle.map.json --output build/scripts/bundle.map.json]",
     "prod": "npm run build && npm-run-all minify:* && node tools/build.production.config.js",
+    "preaudit": "npm-run-all build",
     "audit": "npm-run-all audit:*",
     "audit:css": "parker build/styles/main.css"
   },
